@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Compass — Rooted in Rahmah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F9F6F1;
+    --terracotta: #C77F5C;
+    --rose: #A9556F;
+    --panel: #F3E5E2;
+    --ink: #33261C;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+  a { color: inherit; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 32px; }
+
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 28px 32px; max-width: 1000px; margin: 0 auto;
+  }
+  .nav-mark { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--terracotta); text-decoration: none; }
+  .nav-links { display: flex; gap: 26px; font-size: 0.83rem; flex-wrap: wrap; }
+  .nav-links a { text-decoration: none; color: var(--ink); opacity: 0.75; }
+  .nav-links a.current { opacity: 1; border-bottom: 1.5px solid var(--rose); padding-bottom: 3px; }
+
+  .hero {
+    background: var(--panel);
+    padding: 80px 32px 64px;
+    text-align: center;
+  }
+  .hero .logo-mark { width: 170px; height: auto; margin: 0 auto 8px; display: block; }
+  .hero .kicker { font-size: 0.82rem; letter-spacing: 0.06em; color: var(--rose); margin-bottom: 14px; }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 3.8rem); color: var(--rose); }
+  .hero .lede {
+    max-width: 560px; margin: 22px auto 0;
+    font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+  }
+
+  .intro {
+    max-width: 640px; margin: 0 auto; padding: 70px 32px 60px;
+  }
+  .intro p { font-size: 1.02rem; }
+
+  .services {
+    max-width: 980px; margin: 0 auto; padding: 20px 32px 30px;
+  }
+  .services h2 { font-size: 1.8rem; color: var(--rose); margin-bottom: 34px; text-align: center; }
+  .tiers {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    border-top: 1px solid rgba(51,38,28,0.16);
+  }
+  .tier {
+    padding: 34px 28px;
+    border-right: 1px solid rgba(51,38,28,0.16);
+  }
+  .tier:last-child { border-right: none; }
+  .tier .name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 4px; }
+  .tier .price { font-size: 0.95rem; color: var(--rose); font-weight: 600; margin-bottom: 18px; }
+  .tier ul { list-style: none; }
+  .tier li {
+    font-size: 0.85rem; padding: 7px 0 7px 16px; position: relative;
+    opacity: 0.85;
+  }
+  .tier li::before {
+    content: "–"; position: absolute; left: 0; opacity: 0.6;
+  }
+  .tier .note {
+    margin-top: 16px; font-size: 0.78rem; opacity: 0.6; font-style: italic;
+  }
+
+  .student-note {
+    text-align: center; padding: 30px 32px 70px; font-size: 0.9rem; opacity: 0.75;
+  }
+
+  .credentials {
+    background: var(--panel);
+    padding: 64px 32px;
+  }
+  .credentials-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+  .credentials h2 { font-size: 1.5rem; color: var(--rose); margin-bottom: 16px; }
+  .credentials p { font-size: 0.98rem; }
+
+  .cta {
+    max-width: 640px; margin: 0 auto; padding: 70px 32px 100px; text-align: center;
+  }
+  .cta h2 { font-size: 1.6rem; margin-bottom: 16px; }
+  .cta a.button {
+    display: inline-block; margin-top: 18px; text-decoration: none;
+    background: var(--rose); color: var(--cream);
+    padding: 14px 34px; font-size: 0.88rem; font-weight: 600;
+  }
+
+  footer {
+    background: var(--ink); color: var(--cream);
+    padding: 40px 32px; text-align: center; font-size: 0.8rem; opacity: 0.7;
+  }
+  footer a { text-decoration: none; color: var(--cream); }
+
+  @media (max-width: 720px) {
+    .tiers { grid-template-columns: 1fr; }
+    .tier { border-right: none; border-bottom: 1px solid rgba(51,38,28,0.16); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-mark" href="index.html">Rooted in Rahmah</a>
+  <div class="nav-links">
+    <a href="sourdough-studio.html">Sourdough Studio</a>
+    <a href="career-compass.html" class="current">Career Compass</a>
+    <a href="about.html">About</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <img class="logo-mark" src="assets/career-compass-logo.png" alt="Career Compass">
+  <p class="lede">Guidance for the pivotal moments in your career.</p>
+</section>
+
+<section class="intro">
+  <p>I've navigated career growth across federal consulting, tech-adjacent, and corporate spaces — and I built Career Compass to help others do the same. Whether you're just starting out or leveling up, I'm in your corner.</p>
+</section>
+
+<section class="services">
+  <h2 class="serif">Services</h2>
+  <div class="tiers">
+    <div class="tier">
+      <div class="name serif">Resume Reviews</div>
+      <div class="price">$75</div>
+      <ul>
+        <li>In-depth, personalized feedback</li>
+        <li>Tailored to your target role or industry</li>
+        <li>ATS optimization and formatting guidance</li>
+        <li>One round of revisions included</li>
+        <li>Delivered within 3 business days</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <div class="name serif">Interview Prep</div>
+      <div class="price">$150 / month</div>
+      <ul>
+        <li>2 sessions per month, 45 minutes each</li>
+        <li>General prep or company/role-specific</li>
+        <li>Mock interview with real-time coaching</li>
+        <li>Storytelling, framing, and confidence tips</li>
+        <li>Resume support included</li>
+        <li>Notes and action items after each session</li>
+      </ul>
+      <div class="note">Evenings and weekends available.</div>
+    </div>
+    <div class="tier">
+      <div class="name serif">Mentorship</div>
+      <div class="price">$225 / month</div>
+      <ul>
+        <li>2 sessions per month, 30–45 minutes each</li>
+        <li>Career strategy and growth planning</li>
+        <li>Navigating workplace challenges</li>
+        <li>Support with difficult conversations and office politics</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<p class="student-note">Student and recent grad pricing available — just ask.</p>
+
+<section class="credentials">
+  <div class="credentials-inner">
+    <h2 class="serif">A bit about my background</h2>
+    <p>I hold dual master's degrees in Human-Computer Interaction and Systems Engineering, with experience across federal consulting.</p>
+  </div>
+</section>
+
+<section class="cta">
+  <h2 class="serif">Interested?</h2>
+  <p>Request a session, or reach out with questions first.</p>
+  <a class="button" href="career-compass-book.html">Request a session</a>
+  <span class="social" style="display:block; margin-top:16px; font-size:0.85rem; opacity:0.75;">Or email <a href="mailto:careercompass@rootedinrahmah.com" style="text-decoration:underline;">careercompass@rootedinrahmah.com</a></span>
+</section>
+
+<footer>
+  <a href="index.html">Rooted in Rahmah</a> · © 2026
+</footer>
+
+</body>
+</html>
