@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book — Career Compass</title>
+<title>Book: Career Compass</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --cream: #F9F6F1;
@@ -21,14 +21,14 @@
     font-family: 'Montserrat', sans-serif; line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+  h1, h2, h3, .serif { font-family: 'Montserrat', sans-serif; font-weight: 700; }
   a { color: inherit; }
 
   nav {
     display: flex; align-items: center; justify-content: space-between;
     padding: 28px 32px; max-width: 1000px; margin: 0 auto; flex-wrap: wrap; gap: 14px;
   }
-  .nav-mark { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--rose); text-decoration: none; }
+  .nav-mark { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--rose); text-decoration: none; }
   .nav-links { display: flex; gap: 26px; font-size: 0.83rem; flex-wrap: wrap; }
   .nav-links a { text-decoration: none; color: var(--ink); opacity: 0.75; }
   .nav-links a.current { opacity: 1; border-bottom: 1.5px solid var(--rose); padding-bottom: 3px; }
@@ -50,10 +50,11 @@
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
   }
   .tier-card {
-    border: 1px solid var(--line); padding: 26px 22px; cursor: default;
+    display: block; border: 1px solid var(--line); padding: 26px 22px; cursor: pointer;
   }
-  .tier-card.selected { border-color: var(--rose); background: var(--panel); }
-  .tier-card .name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; }
+  .tier-card input[type="radio"] { float: right; margin-top: 2px; accent-color: var(--rose); }
+  .tier-card:has(input:checked) { border-color: var(--rose); background: var(--panel); }
+  .tier-card .name { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.3rem; }
   .tier-card .price { font-size: 0.85rem; color: var(--rose); font-weight: 600; margin-top: 4px; }
   .tier-card .desc { font-size: 0.8rem; opacity: 0.7; margin-top: 10px; }
 
@@ -96,7 +97,7 @@
     display: block; width: 100%; margin-top: 22px; text-align: center;
     background: var(--rose); color: var(--cream); border: none;
     padding: 15px; font-size: 0.9rem; font-weight: 600; font-family: 'Montserrat', sans-serif;
-    cursor: default;
+    cursor: pointer;
   }
   .pay-note { text-align: center; font-size: 0.72rem; opacity: 0.55; margin-top: 10px; }
 
@@ -128,7 +129,7 @@
 <section class="hero">
   <div class="kicker">Career Compass</div>
   <h1>Request a session</h1>
-  <p>Tell me what you're looking for and a time that works — I'll confirm personally.</p>
+  <p>Tell me what you're looking for and a time that works. I'll confirm personally.</p>
 </section>
 
 <div class="steps">
@@ -137,59 +138,84 @@
   <div class="step">3. I'll confirm</div>
 </div>
 
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<input type="hidden" name="_subject" value="New Career Compass session request">
+<input type="hidden" name="_next" value="career-compass-confirmation.html">
+
 <div class="tiers">
-  <div class="tier-card selected">
+  <label class="tier-card">
+    <input type="radio" name="Service" value="Resume Review ($75)" checked>
     <div class="name serif">Resume Review</div>
     <div class="price">$75</div>
-    <div class="desc">One-time, delivered within 3 business days.</div>
-  </div>
-  <div class="tier-card">
+    <div class="desc">Delivered within about a week.</div>
+  </label>
+  <label class="tier-card">
+    <input type="radio" name="Service" value="Interview Prep ($150/mo)">
     <div class="name serif">Interview Prep</div>
     <div class="price">$150 / mo</div>
     <div class="desc">2 sessions per month, 45 min each.</div>
-  </div>
-  <div class="tier-card">
+  </label>
+  <label class="tier-card">
+    <input type="radio" name="Service" value="Mentorship ($225/mo)">
     <div class="name serif">Mentorship</div>
     <div class="price">$225 / mo</div>
     <div class="desc">2 sessions per month, 30–45 min each.</div>
-  </div>
+  </label>
 </div>
 
-<div class="booking-layout">
+<div id="resume-flow" class="booking-layout">
   <div class="calendar">
-    <h2 class="serif">When works for you?</h2>
+    <h2 class="serif">Resume Review details</h2>
     <div class="field">
-      <label for="pref-date">Preferred date</label>
-      <input type="text" id="pref-date" placeholder="e.g. next Saturday">
-    </div>
-    <div class="field">
-      <label for="pref-time">Preferred time</label>
-      <input type="text" id="pref-time" placeholder="e.g. evenings or weekends">
+      <label for="turnaround">When do you need it by?</label>
+      <select id="turnaround" name="Turnaround">
+        <option>Standard: about a week (no extra charge)</option>
+        <option>Rush: 3 days (+$30)</option>
+        <option>Weekend delivery needed (+$30)</option>
+      </select>
     </div>
     <div class="field">
       <label for="notes">Anything I should know?</label>
-      <input type="text" id="notes" placeholder="Optional — role, industry, timeline, etc.">
+      <input type="text" id="notes" name="Notes" placeholder="Optional: role, industry, target job, etc.">
     </div>
   </div>
 
   <div class="summary">
-    <h2 class="serif">Your request</h2>
-    <div class="summary-line"><span>Resume Review</span><span>$75.00</span></div>
-    <div class="summary-line total"><span>Estimated total</span><span>$75.00</span></div>
+    <h2 class="serif">Your details</h2>
 
     <div class="field">
       <label for="name">Name</label>
-      <input type="text" id="name" placeholder="Your name">
+      <input type="text" id="name" name="Name" placeholder="Your name" required>
     </div>
     <div class="field">
       <label for="email">Email</label>
-      <input type="email" id="email" placeholder="you@example.com">
+      <input type="email" id="email" name="Email" placeholder="you@example.com" required>
     </div>
 
-    <a class="pay-btn" href="career-compass-confirmation.html" style="display:block; text-decoration:none;">Request this session</a>
-    <div class="pay-note">Nothing is charged yet — I'll personally confirm your time and send payment details.</div>
+    <button class="pay-btn" type="submit">Request this review</button>
+    <div class="pay-note">Nothing is charged yet. I'll personally confirm and send payment details.</div>
   </div>
 </div>
+</form>
+
+<div id="calendar-flow" style="display:none; max-width:520px; margin:60px auto 100px; padding:0 32px; text-align:center;">
+  <h2 class="serif">Let's find a time</h2>
+  <p style="margin-top:14px; font-size:0.98rem; opacity:0.85;">Interview Prep and Mentorship sessions are scheduled directly on my calendar. Pick whatever time works for you and it's set.</p>
+  <a href="https://calendar.app.google/DoET7hfzWkb1HZ7T6" target="_blank" rel="noopener" class="pay-btn" style="display:inline-block; width:auto; padding:14px 34px; margin-top:24px; text-decoration:none;">Open my booking calendar</a>
+</div>
+
+<script>
+  function updateBookingFlow() {
+    var checked = document.querySelector('input[name="Service"]:checked');
+    var isResume = checked && checked.value.indexOf('Resume Review') === 0;
+    document.getElementById('resume-flow').style.display = isResume ? 'grid' : 'none';
+    document.getElementById('calendar-flow').style.display = isResume ? 'none' : 'block';
+  }
+  document.querySelectorAll('input[name="Service"]').forEach(function (r) {
+    r.addEventListener('change', updateBookingFlow);
+  });
+  updateBookingFlow();
+</script>
 
 <footer>
   <a href="index.html">Rooted in Rahmah</a> · © 2026

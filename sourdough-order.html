@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Order — Sourdough Studio</title>
+<title>Order: Sourdough Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --cream: #F9F6F1;
@@ -22,14 +22,14 @@
     font-family: 'Montserrat', sans-serif; line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+  h1, h2, h3, .serif { font-family: 'Montserrat', sans-serif; font-weight: 700; }
   a { color: inherit; }
 
   nav {
     display: flex; align-items: center; justify-content: space-between;
     padding: 28px 32px; max-width: 1000px; margin: 0 auto; flex-wrap: wrap; gap: 14px;
   }
-  .nav-mark { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--terracotta); text-decoration: none; }
+  .nav-mark { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--terracotta); text-decoration: none; }
   .nav-links { display: flex; gap: 26px; font-size: 0.83rem; flex-wrap: wrap; }
   .nav-links a { text-decoration: none; color: var(--ink); opacity: 0.75; }
   .nav-links a.current { opacity: 1; border-bottom: 1.5px solid var(--warm-brown); padding-bottom: 3px; }
@@ -58,22 +58,19 @@
     align-items: center;
   }
   .items .item:last-child { border-bottom: 1px solid var(--line); }
-  .item-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; }
+  .item-name { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.25rem; }
   .item-desc { font-size: 0.82rem; opacity: 0.65; margin-top: 3px; }
-  .item-size-row { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
-  .size-pill {
-    font-size: 0.78rem; padding: 6px 12px; border: 1px solid var(--line); cursor: default;
-  }
-  .size-pill.selected { border-color: var(--warm-brown); color: var(--warm-brown); font-weight: 600; }
 
-  .qty {
-    display: flex; align-items: center; gap: 10px; border: 1px solid var(--line);
-    padding: 6px 10px; white-space: nowrap;
+
+  .item-controls {
+    display: flex; align-items: center; gap: 8px; white-space: nowrap;
   }
-  .qty button {
-    width: 24px; height: 24px; border: none; background: var(--panel); font-size: 1rem; cursor: default;
+  .item-controls select, .item-controls input[type="number"] {
+    font-family: 'Montserrat', sans-serif; font-size: 0.85rem;
+    border: 1px solid var(--line); background: #fff; padding: 8px 10px;
   }
-  .qty .count { font-size: 0.9rem; min-width: 14px; text-align: center; }
+  .item-controls select { min-width: 130px; }
+  .item-controls input[type="number"] { width: 60px; }
 
   .cart {
     background: var(--panel); padding: 32px; position: sticky; top: 30px;
@@ -97,7 +94,7 @@
     display: block; width: 100%; margin-top: 22px; text-align: center;
     background: var(--warm-brown); color: var(--cream); border: none;
     padding: 15px; font-size: 0.9rem; font-weight: 600; font-family: 'Montserrat', sans-serif;
-    cursor: default;
+    cursor: pointer;
   }
   .pay-note { text-align: center; font-size: 0.72rem; opacity: 0.55; margin-top: 10px; }
 
@@ -138,6 +135,10 @@
   <div class="step">3. I'll confirm</div>
 </div>
 
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<input type="hidden" name="_subject" value="New Sourdough Studio order request">
+<input type="hidden" name="_next" value="sourdough-confirmation.html">
+
 <div class="layout">
   <div class="items">
 
@@ -145,81 +146,94 @@
       <div>
         <div class="item-name">Classic Sourdough</div>
         <div class="item-desc">Crispy crust, tangy interior.</div>
-        <div class="item-size-row">
-          <div class="size-pill">Small · $10</div>
-          <div class="size-pill selected">Medium · $14</div>
-          <div class="size-pill">Large · $16</div>
-        </div>
       </div>
-      <div class="qty"><button>–</button><span class="count">1</span><button>+</button></div>
+      <div class="item-controls">
+        <select name="Classic Sourdough size">
+          <option value="">Not ordering</option>
+          <option>Small ($10)</option>
+          <option>Medium ($14)</option>
+          <option>Large ($16)</option>
+        </select>
+        <input type="number" name="Classic Sourdough qty" min="0" max="10" value="0">
+      </div>
     </div>
 
     <div class="item">
       <div>
         <div class="item-name">Jalapeño Cheddar Sourdough</div>
         <div class="item-desc">Real jalapeños, sharp cheddar.</div>
-        <div class="item-size-row">
-          <div class="size-pill selected">Small · $12</div>
-          <div class="size-pill">Medium · $16</div>
-          <div class="size-pill">Large · $20</div>
-        </div>
       </div>
-      <div class="qty"><button>–</button><span class="count">1</span><button>+</button></div>
+      <div class="item-controls">
+        <select name="Jalapeño Cheddar size">
+          <option value="">Not ordering</option>
+          <option>Small ($12)</option>
+          <option>Medium ($16)</option>
+          <option>Large ($20)</option>
+        </select>
+        <input type="number" name="Jalapeño Cheddar qty" min="0" max="10" value="0">
+      </div>
     </div>
 
     <div class="item">
       <div>
         <div class="item-name">Brown Butter Chocolate Chip Cookies</div>
         <div class="item-desc">Made with sourdough discard.</div>
-        <div class="item-size-row">
-          <div class="size-pill">Single · $3.50</div>
-          <div class="size-pill selected">Box of 6 · $18</div>
-          <div class="size-pill">Box of 12 · $32</div>
-        </div>
       </div>
-      <div class="qty"><button>–</button><span class="count">1</span><button>+</button></div>
+      <div class="item-controls">
+        <select name="Cookies size">
+          <option value="">Not ordering</option>
+          <option>Single ($3.50)</option>
+          <option>Box of 6 ($18)</option>
+          <option>Box of 12 ($32)</option>
+        </select>
+        <input type="number" name="Cookies qty" min="0" max="10" value="0">
+      </div>
     </div>
 
     <div class="item">
       <div>
         <div class="item-name">Custom Sourdough</div>
-        <div class="item-desc">Tell us your flavor combination at checkout.</div>
-        <div class="item-size-row">
-          <div class="size-pill">Small · $12</div>
-          <div class="size-pill">Medium · $16</div>
-          <div class="size-pill">Large · $20</div>
-        </div>
+        <div class="item-desc">Tell us your flavor combination below.</div>
       </div>
-      <div class="qty"><button>–</button><span class="count">0</span><button>+</button></div>
+      <div class="item-controls">
+        <select name="Custom Sourdough size">
+          <option value="">Not ordering</option>
+          <option>Small ($12)</option>
+          <option>Medium ($16)</option>
+          <option>Large ($20)</option>
+        </select>
+        <input type="number" name="Custom Sourdough qty" min="0" max="10" value="0">
+      </div>
     </div>
 
   </div>
 
   <div class="cart">
     <h2 class="serif">Your reservation</h2>
-    <div class="cart-line"><span>Classic Sourdough (Med)</span><span>$14.00</span></div>
-    <div class="cart-line"><span>Jalapeño Cheddar (Small)</span><span>$12.00</span></div>
-    <div class="cart-line"><span>Cookies, Box of 6</span><span>$18.00</span></div>
-    <div class="cart-line total"><span>Estimated total</span><span>$44.00</span></div>
 
     <div class="field">
       <label for="name">Name</label>
-      <input type="text" id="name" placeholder="Your name">
+      <input type="text" id="name" name="Name" placeholder="Your name" required>
     </div>
     <div class="field">
       <label for="contact">Email or phone</label>
-      <input type="text" id="contact" placeholder="How should I reach you?">
+      <input type="text" id="contact" name="Contact" placeholder="How should I reach you?" required>
+    </div>
+    <div class="field">
+      <label for="notes">Anything else? (custom flavor, allergies, etc.)</label>
+      <input type="text" id="notes" name="Notes" placeholder="Optional">
     </div>
 
     <div class="pickup-note">
       <strong>Pickup: Sunday, Ellicott City</strong>
-      Orders close Friday at midnight. This reserves your order — I'll personally confirm it and send pickup and payment details.
+      Orders close Friday at midnight. This reserves your order. I'll personally confirm it and send pickup and payment details.
     </div>
 
-    <a class="pay-btn" href="sourdough-confirmation.html" style="display:block; text-decoration:none;">Reserve order</a>
-    <div class="pay-note">Nothing is charged yet — payment is arranged once I confirm.</div>
+    <button class="pay-btn" type="submit">Reserve order</button>
+    <div class="pay-note">Nothing is charged yet. Payment is arranged once I confirm.</div>
   </div>
 </div>
+</form>
 
 <footer>
   <a href="index.html">Rooted in Rahmah</a> · © 2026
