@@ -17,7 +17,6 @@ Each venture is its own standalone page, no shared multi-page site, plus a thank
 ## Pending
 
 - **Resume PDF**: `career-compass.html` has a "Download full resume (PDF)" button linking to `resume-aneeza.pdf`, but that file doesn't exist yet. Add a polished resume PDF named exactly `resume-aneeza.pdf` at the site root (next to `career-compass.html`, not in `images/`) or the link will 404.
-- **Google Calendar link**: the "Schedule a time" step in the Career Compass session request form links to a placeholder URL (`PASTE-YOUR-LINK-HERE`). Set up a Google Calendar Appointment Schedule and swap in the real booking link.
 
 ## Images
 
