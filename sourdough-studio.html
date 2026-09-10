@@ -3,174 +3,298 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sourdough Studio: Rooted in Rahmah</title>
+<title>Sourdough Studio | Rooted in Rahmah</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --cream: #F9F6F1;
-    --terracotta: #C77F5C;
-    --warm-brown: #8B4513;
-    --panel: #EFE3D3;
-    --ink: #33261C;
+  :root{
+    --cream:#F9F6F1;
+    --terracotta:#C77F5C;
+    --brown:#8B4513;
+    --ink:#2B2420;
+    --line:#E4DAD1;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: var(--cream);
-    color: var(--ink);
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Montserrat',sans-serif;
+    font-weight:400;
+    line-height:1.65;
   }
-  h1, h2, h3, .serif { font-family: 'Montserrat', sans-serif; font-weight: 700; }
-  a { color: inherit; }
-  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 32px; }
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--ink);}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 32px;}
 
-  nav {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 28px 32px; max-width: 1000px; margin: 0 auto;
+  header.site{
+    position:sticky;top:0;z-index:10;
+    background:rgba(249,246,241,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
   }
-  .nav-mark { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--terracotta); text-decoration: none; }
-  .nav-links { display: flex; gap: 26px; font-size: 0.83rem; flex-wrap: wrap; }
-  .nav-links a { text-decoration: none; color: var(--ink); opacity: 0.75; }
-  .nav-links a.current { opacity: 1; border-bottom: 1.5px solid var(--warm-brown); padding-bottom: 3px; }
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;}
+  .wordmark{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--brown);}
+  .wordmark small{display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.06em;color:var(--ink);opacity:0.55;font-weight:500;}
+  .navlinks{display:flex;gap:28px;font-size:0.88rem;}
+  .navlinks a{border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s;}
+  .navlinks a:hover{border-color:var(--terracotta);}
+  .home-link{font-size:0.78rem;opacity:0.65;}
 
-  .hero {
-    background: var(--panel);
-    padding: 80px 32px 64px;
-    text-align: center;
+  .hero{padding:88px 0 72px;}
+  .hero .logo-mark{height:130px;width:auto;margin-bottom:20px;display:block;}
+  .hero .kicker{font-size:0.85rem;letter-spacing:0.02em;color:var(--brown);margin-bottom:14px;}
+  .hero h1{font-size:3rem;max-width:12ch;line-height:1.08;margin-bottom:22px;}
+  .hero p.lede{max-width:52ch;font-size:1.08rem;color:#4a423c;margin-bottom:30px;}
+  .btn{
+    display:inline-block;background:var(--brown);color:var(--cream);
+    padding:13px 28px;font-size:0.85rem;letter-spacing:0.02em;
+    border:none;cursor:pointer;transition:background .2s;
   }
-  .hero .logo-mark { width: 170px; height: auto; margin: 0 auto 8px; display: block; }
-  .hero .kicker { font-size: 0.82rem; letter-spacing: 0.06em; color: var(--warm-brown); margin-bottom: 14px; }
-  .hero h1 { font-size: clamp(2.6rem, 6vw, 3.8rem); color: var(--warm-brown); }
-  .hero .lede {
-    max-width: 560px; margin: 22px auto 0;
-    font-family: 'Montserrat', sans-serif; font-size: 1.02rem; opacity: 0.85;
+  .btn:hover{background:var(--terracotta);}
+  .btn-ghost{
+    display:inline-block;border:1px solid var(--brown);color:var(--brown);
+    padding:12px 27px;font-size:0.85rem;margin-left:14px;
   }
 
-  .intro {
-    max-width: 640px; margin: 0 auto; padding: 70px 32px 60px;
-  }
-  .intro p { font-size: 1.02rem; }
-  .intro p + p { margin-top: 18px; }
+  section{padding:64px 0;border-top:1px solid var(--line);}
+  section .eyebrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--brown);margin-bottom:8px;}
+  section h2{font-size:2rem;margin-bottom:28px;max-width:20ch;}
 
-  .menu {
-    max-width: 720px; margin: 0 auto; padding: 20px 32px 80px;
-  }
-  .menu h2 { font-size: 1.8rem; color: var(--warm-brown); margin-bottom: 34px; }
-  .menu-item {
-    display: flex; justify-content: space-between; align-items: baseline;
-    padding: 22px 0; border-bottom: 1px solid rgba(51,38,28,0.14);
-    gap: 24px;
-  }
-  .menu-item:first-of-type { border-top: 1px solid rgba(51,38,28,0.14); }
-  .menu-item .name { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.35rem; }
-  .menu-item .desc { font-size: 0.85rem; opacity: 0.7; margin-top: 4px; max-width: 40ch; }
-  .menu-item .price { font-size: 0.88rem; white-space: nowrap; color: var(--warm-brown); font-weight: 600; text-align: right; }
+  .about p{max-width:62ch;margin-bottom:16px;color:#4a423c;}
 
-  .how {
-    background: var(--panel);
-    padding: 70px 32px;
+  .menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:8px;}
+  .menu-card{background:#fff;border:1px solid var(--line);overflow:hidden;}
+  .menu-card .photo{
+    aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#EFE7DD,#EFE7DD 10px,#F5EEE6 10px,#F5EEE6 20px);
+    display:flex;align-items:center;justify-content:center;
+    font-size:0.75rem;color:#a89b8c;letter-spacing:0.02em;
+    overflow:hidden;
   }
-  .how-inner { max-width: 640px; margin: 0 auto; text-align: center; }
-  .how h2 { font-size: 1.7rem; color: var(--warm-brown); margin-bottom: 20px; }
-  .how p { font-size: 1rem; }
-  .how p + p { margin-top: 14px; }
+  .menu-card .photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .menu-card .body{padding:20px 22px;}
+  .menu-card .name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:6px;}
+  .menu-card .desc{font-size:0.87rem;color:#4a423c;margin-bottom:12px;}
+  .menu-card .sizes{font-size:0.85rem;color:#4a423c;margin-bottom:12px;}
+  .menu-card .ingredients{font-size:0.78rem;color:#8a8078;font-style:italic;padding-top:10px;border-top:1px solid var(--line);}
+  .photo-disclaimer{font-size:0.8rem;color:#8a8078;font-style:italic;margin-bottom:20px;max-width:62ch;}
+  .size-legend{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:28px;font-size:0.85rem;color:#4a423c;}
+  .size-legend span strong{color:var(--brown);}
+  .menu-card .name-badge{display:inline-block;font-size:0.68rem;letter-spacing:0.03em;color:var(--brown);border:1px solid var(--brown);padding:2px 8px;margin-bottom:8px;}
 
-  .cta {
-    max-width: 640px; margin: 0 auto; padding: 70px 32px 100px; text-align: center;
-  }
-  .cta h2 { font-size: 1.6rem; margin-bottom: 16px; }
-  .cta a.button {
-    display: inline-block; margin-top: 18px; text-decoration: none;
-    background: var(--warm-brown); color: var(--cream);
-    padding: 14px 34px; font-size: 0.88rem; font-weight: 600;
-  }
-  .cta .social { display: block; margin-top: 22px; font-size: 0.88rem; opacity: 0.75; }
+  .how-it-works{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px;}
+  .payment-note{background:#fff;border:1px solid var(--line);border-left:3px solid var(--brown);padding:20px 24px;margin-top:24px;font-size:0.9rem;color:#4a423c;}
+  .payment-note strong{color:var(--ink);}
+  .step{background:#fff;border:1px solid var(--line);padding:26px;}
+  .step .label{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--brown);margin-bottom:8px;}
+  .step p{font-size:0.9rem;color:#4a423c;}
 
-  footer {
-    background: var(--ink); color: var(--cream);
-    padding: 40px 32px; text-align: center; font-size: 0.8rem; opacity: 0.7;
+  .contact-box{background:#fff;border:1px solid var(--line);padding:34px;max-width:520px;}
+  .contact-box p{font-size:0.92rem;color:#4a423c;margin-bottom:18px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:0.78rem;margin-bottom:6px;color:#4a423c;}
+  .field input, .field textarea{
+    width:100%;border:1px solid var(--line);background:var(--cream);
+    padding:10px 12px;font-family:'Montserrat',sans-serif;font-size:0.9rem;
   }
-  footer a { text-decoration: none; color: var(--cream); }
+  .field textarea{min-height:90px;resize:vertical;}
+
+  footer{padding:40px 0 60px;font-size:0.82rem;color:#4a423c;}
+  footer a{color:var(--brown);border-bottom:1px solid var(--brown);}
+
+  @media(max-width:720px){
+    .hero h1{font-size:2.2rem;}
+    .how-it-works{grid-template-columns:1fr;}
+    .navlinks{display:none;}
+    .menu-grid{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
 
-<nav>
-  <a class="nav-mark" href="index.html">Rooted in Rahmah</a>
-  <div class="nav-links">
-    <a href="sourdough-studio.html" class="current">Sourdough Studio</a>
-    <a href="career-compass.html">Career Compass</a>
-    <a href="about.html">About</a>
-    <a href="resume.html">Resume</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
+<header class="site">
+  <nav class="wrap">
+    <div class="wordmark">Sourdough Studio<small>Rooted in Rahmah</small></div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#menu">What I Bake</a>
+      <a href="#discard">Discard Treats</a>
+      <a href="#how">How It Works</a>
+      <a href="#order">Order</a>
+      <a href="#questions">Questions</a>
+      <a class="home-link" href="/">Rooted in Rahmah ↗</a>
+    </div>
+  </nav>
+</header>
 
 <section class="hero">
-  <img class="logo-mark" src="assets/sourdough-studio-logo.png" alt="Sourdough Studio">
-  <p class="lede">Slow-fermented sourdough, baked in small batches out of my kitchen.</p>
-</section>
-
-<section class="intro">
-  <p>I've kept a sourdough starter alive for years, refining the process one loaf at a time. Sourdough Studio is a small cottage bakery run out of my kitchen in Ellicott City: naturally leavened bread and discard treats, made in small batches and baked to order.</p>
-</section>
-
-<section class="menu">
-  <h2 class="serif">What I bake</h2>
-
-  <div class="menu-item">
-    <div>
-      <div class="name">Classic Sourdough</div>
-      <div class="desc">Classic artisan sourdough with crispy crust and tangy interior.</div>
-    </div>
-    <div class="price">Small $10 · Medium $14 · Large $16</div>
-  </div>
-
-  <div class="menu-item">
-    <div>
-      <div class="name">Jalapeño Cheddar Sourdough</div>
-      <div class="desc">Same slow-fermented base, folded with real jalapeños and sharp cheddar.</div>
-    </div>
-    <div class="price">Small $12 · Medium $16 · Large $20</div>
-  </div>
-
-  <div class="menu-item">
-    <div>
-      <div class="name">Custom Sourdough</div>
-      <div class="desc">Choose your own flavor combination, and I'll create a loaf tailored to your preferences.</div>
-    </div>
-    <div class="price">Small $12 · Medium $16 · Large $20</div>
-  </div>
-
-  <div class="menu-item">
-    <div>
-      <div class="name">Brown Butter Chocolate Chip Cookies</div>
-      <div class="desc">Made with sourdough discard.</div>
-    </div>
-    <div class="price">Single $3.50 · Box of 6 $18 · Box of 12 $32</div>
+  <div class="wrap">
+    <img class="logo-mark" src="images/sourdough-studio-logo.png" alt="Sourdough Studio, Rooted in Rahmah">
+    <h1>Slow-fermented sourdough, baked in small batches out of my kitchen.</h1>
+    <p class="lede">A cottage bakery rooted in years of sourdough practice — naturally leavened, made in small batches, and baked to order out of Ellicott City, Maryland.</p>
+    <a href="#menu" class="btn">See what I bake</a>
+    <a href="#order" class="btn-ghost">Reserve an order</a>
   </div>
 </section>
 
-<section class="how">
-  <div class="how-inner">
-    <h2 class="serif">How it works</h2>
-    <p>Orders close Friday, with pickup Sunday in Ellicott City.</p>
-    <p>Pickup only, no delivery.</p>
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="eyebrow">About</div>
+    <h2>Why I bake</h2>
+    <p>I'm Aneeza, and Sourdough Studio grew out of years of baking naturally leavened bread at home. Every loaf here is slow-fermented and baked in small batches, out of my own kitchen, with the same care whether it's your first loaf from me or your fiftieth.</p>
+    <p>I'm also always experimenting with what a sourdough starter can do beyond bread — I'd love to hear your ideas too, so if you've got a flavor or a use for starter you'd want to see me try, send it my way. I might just bring it to life.</p>
   </div>
 </section>
 
-<section class="cta">
-  <h2 class="serif">Ready to order?</h2>
-  <p>Reach out to place a Tuesday order, or ask about a custom loaf.</p>
-  <a class="button" href="sourdough-order.html">Reserve your order</a>
-  <span class="social">Instagram: @sourdough.studio.rr</span>
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="eyebrow">What I Bake</div>
+    <h2>The menu</h2>
+    <p class="photo-disclaimer">Photos below are a reflection of what each bake could look like — everything here is made by hand, so yours may vary a little from the picture.</p>
+    <div class="size-legend">
+      <span><strong>Small</strong> — feeds 1 person for 1–3 days</span>
+      <span><strong>Medium</strong> — feeds 1 person for 1–5 days</span>
+      <span><strong>Large</strong> — feeds 1 person for 1–8 days</span>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1620921592619-652411a0d01a?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Classic Sourdough loaf" loading="lazy"></div>
+        <div class="body">
+          <div class="name">Classic Sourdough</div>
+          <div class="desc">Our signature naturally leavened loaf — crisp crust, soft tangy crumb.</div>
+          <div class="sizes">Small $10 · Medium $14 · Large $16</div>
+          <div class="ingredients">All-purpose flour, water, salt, sourdough starter</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="photo"><img src="images/jalapeno-cheddar-sourdough.jpg" alt="Jalapeño Cheddar Sourdough loaf" loading="lazy"></div>
+        <div class="body">
+          <div class="name">Jalapeño Cheddar Sourdough</div>
+          <div class="desc">Classic sourdough folded with jalapeños and mild cheddar.</div>
+          <div class="sizes">Small $12 · Medium $16 · Large $20</div>
+          <div class="ingredients">All-purpose flour, water, salt, sourdough starter, jalapeños, mild cheddar</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1675725291010-cb1020860cb2?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Buttery Sourdough loaf" loading="lazy"></div>
+        <div class="body">
+          <div class="name">Buttery Sourdough</div>
+          <div class="desc">The classic base, enriched with butter for a softer, richer crumb.</div>
+          <div class="sizes">Pricing TBD</div>
+          <div class="ingredients">All-purpose flour, water, salt, sourdough starter, butter</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1599743271551-da8b8faacc5b?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Almost Sourdough Almond Bread" loading="lazy"></div>
+        <div class="body">
+          <div class="name">Almost Sourdough Almond Bread</div>
+          <div class="desc">A gentler loaf for anyone watching their blood sugar or eating lower-carb.</div>
+          <div class="sizes">Pricing TBD</div>
+          <div class="ingredients">Almond flour, sourdough starter, quinoa flour, eggs, olive oil, baking soda, salt</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1615227233267-193d25d405f7?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Custom Sourdough ingredients" loading="lazy"></div>
+        <div class="body">
+          <div class="name">Custom Sourdough</div>
+          <div class="desc">Same slow-fermented base — tell me what you're craving and I'll make it happen.</div>
+          <div class="sizes">Small $12 · Medium $16 · Large $20</div>
+          <div class="ingredients">Base of all-purpose flour, water, salt, sourdough starter — customizations vary by request</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="discard" id="discard">
+  <div class="wrap">
+    <div class="eyebrow">Beyond the Loaf</div>
+    <h2>Made with sourdough discard</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1657418830273-40c19cfff4d7?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Brown Butter Chocolate Chip Cookies" loading="lazy"></div>
+        <div class="body">
+          <div class="name">Brown Butter Chocolate Chip Cookies</div>
+          <div class="desc">Chewy cookies made with nutty brown butter and milk chocolate chips.</div>
+          <div class="sizes">$3.50 each · $18/box of 6 · $32/box of 12</div>
+          <div class="ingredients">Flour, sugar, salt, baking soda, baking powder, milk chocolate chips, eggs, brown butter, vanilla extract</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="eyebrow">How It Works</div>
+    <h2>Ordering, made simple</h2>
+    <div class="how-it-works">
+      <div class="step">
+        <div class="label">Orders close every Friday</div>
+        <p>Submit your order request by end of day Friday for that week's bake.</p>
+      </div>
+      <div class="step">
+        <div class="label">Confirm & pay to lock it in</div>
+        <p>I'll personally confirm your order, then payment is due upfront via Venmo or Zelle to reserve it.</p>
+      </div>
+      <div class="step">
+        <div class="label">Pickup Sunday</div>
+        <p>Confirmed preorders are ready for pickup Sunday, in Ellicott City — no delivery at this time.</p>
+      </div>
+    </div>
+    <div class="payment-note">
+      <strong>A note on availability:</strong> I bake a few extra loaves each Sunday beyond what's preordered, so walk-ins are welcome to try a new flavor or grab something if you forgot to order ahead — first come, first served while it lasts. But the only way to guarantee your order is to preorder, get it confirmed, and pay upfront.
+    </div>
+  </div>
+</section>
+
+<section class="order" id="order">
+  <div class="wrap">
+    <div class="eyebrow">Pre-order here</div>
+    <h2>Place an order</h2>
+    <div class="contact-box">
+      <p>Send over your order details. Once I confirm it, payment is due upfront via Venmo or Zelle to hold your spot — I'll send the details when I confirm.</p>
+      <form action="https://formspree.io/f/mjyvjlvz" method="POST">
+        <input type="hidden" name="_subject" value="Sourdough Studio — Order Request">
+        <div class="field"><label>Name</label><input type="text" name="name" required></div>
+        <div class="field"><label>Email</label><input type="email" name="email" required></div>
+        <div class="field"><label>Phone</label><input type="tel" name="phone"></div>
+        <div class="field"><label>Order details</label><textarea name="order" placeholder="What would you like, and how many?" required></textarea></div>
+        <div class="field">
+          <label>Preferred payment method</label>
+          <select name="payment_method">
+            <option>Venmo</option>
+            <option>Zelle</option>
+          </select>
+        </div>
+        <div class="field"><label>Notes</label><textarea name="notes" placeholder="Anything else I should know"></textarea></div>
+        <button type="submit" class="btn">Reserve order</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="questions" id="questions">
+  <div class="wrap">
+    <div class="eyebrow">Questions</div>
+    <h2>Have a question or comment?</h2>
+    <div class="contact-box">
+      <p>Not ready to order, or just want to ask something first? Send a note and I'll get back to you.</p>
+      <form action="https://formspree.io/f/meaqvnoe" method="POST">
+        <input type="hidden" name="_subject" value="Sourdough Studio — Question">
+        <div class="field"><label>Name</label><input type="text" name="name" required></div>
+        <div class="field"><label>Email</label><input type="email" name="email" required></div>
+        <div class="field"><label>Message</label><textarea name="message" placeholder="What's on your mind?" required></textarea></div>
+        <button type="submit" class="btn">Send message</button>
+      </form>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <a href="index.html">Rooted in Rahmah</a> · © 2026
+  <div class="wrap">
+    <p>Sourdough Studio, part of <a href="/">Rooted in Rahmah</a> — sourdoughstudio@rootedinrahmah.com · <a href="https://instagram.com/sourdough.studio.rr" target="_blank" rel="noopener">@sourdough.studio.rr</a></p>
+  </div>
 </footer>
 
 </body>

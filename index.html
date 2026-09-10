@@ -5,294 +5,62 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rooted in Rahmah</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --cream: #F9F6F1;
-    --terracotta: #C77F5C;
-    --warm-brown: #8B4513;
-    --dusty-rose: #D4A5A5;
-    --sage: #A8B5A0;
-    --saffron: #D4A017;
-    --ink: #33261C;
+  :root{
+    --cream:#F9F6F1;
+    --terracotta:#C77F5C;
+    --brown:#8B4513;
+    --rose:#A9556F;
+    --ink:#2B2420;
+    --line:#E4DAD1;
   }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--cream);
-    color: var(--ink);
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--cream);color:var(--ink);
+    font-family:'Montserrat',sans-serif;
+    min-height:100vh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:32px;
+    text-align:center;
   }
-
-  h1, h2, h3, .serif {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.01em;
+  h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.6rem;margin-bottom:6px;}
+  .logo-mark{height:150px;width:auto;margin-bottom:6px;}
+  .tagline{font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:#4a423c;margin-bottom:56px;}
+  .doors{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;max-width:760px;}
+  .door{
+    flex:1;min-width:260px;background:#fff;border:1px solid var(--line);
+    padding:40px 30px;text-align:left;text-decoration:none;color:inherit;
+    transition:transform .15s, box-shadow .15s;
   }
-
-  a { color: inherit; }
-
-  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
-
-  /* Nav */
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 28px 32px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .nav-mark {
-    font-family: 'Montserrat', sans-serif; font-weight: 600;
-    font-size: 1.15rem;
-    color: var(--terracotta);
-    letter-spacing: 0.02em;
-    text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 26px; font-size: 0.83rem; flex-wrap: wrap; }
-  .nav-links a { text-decoration: none; color: var(--ink); opacity: 0.75; transition: opacity 0.2s; }
-  .nav-links a:hover { opacity: 1; }
-
-  /* Hero */
-  .hero {
-    text-align: center;
-    padding: 90px 32px 70px;
-  }
-  .logo-mark { width: 240px; height: auto; margin: 0 auto; display: block; }
-  .hero .tagline {
-    margin-top: 6px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    letter-spacing: 0.08em;
-    color: var(--warm-brown);
-    text-transform: lowercase;
-  }
-
-  /* Intro */
-  .intro {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 10px 32px 100px;
-    text-align: center;
-  }
-  .intro p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.08rem;
-    line-height: 1.7;
-    color: var(--ink);
-  }
-  .intro p + p { margin-top: 22px; }
-  .intro .signature {
-    display: block;
-    margin-top: 30px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    color: var(--warm-brown);
-    letter-spacing: 0.04em;
-  }
-
-  /* Current projects - split panel */
-  .projects-heading {
-    text-align: center;
-    font-size: 1.9rem;
-    padding: 0 32px 46px;
-    color: var(--ink);
-  }
-  .panels {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  .panel {
-    padding: 72px 56px;
-    position: relative;
-  }
-  .panel--sourdough {
-    background: #EFE3D3;
-    border-right: 1px solid rgba(51,38,28,0.12);
-  }
-  .panel--career {
-    background: #F3E5E2;
-  }
-  .panel-eyebrow {
-    font-size: 0.78rem;
-    color: var(--ink);
-    opacity: 0.55;
-    margin-bottom: 10px;
-  }
-  .panel h3 {
-    font-size: 2.3rem;
-    margin-bottom: 18px;
-  }
-  .panel--sourdough h3 { color: var(--warm-brown); }
-  .panel--career h3 { color: #A9556F; }
-  .panel p {
-    font-size: 0.98rem;
-    max-width: 34ch;
-    margin-bottom: 26px;
-  }
-  .panel a.visit {
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border-bottom: 1.5px solid currentColor;
-    padding-bottom: 3px;
-  }
-  .panel--sourdough a.visit { color: var(--warm-brown); }
-  .panel--career a.visit { color: #A9556F; }
-
-  /* About */
-  .about {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 100px 32px 100px;
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 40px;
-    align-items: start;
-  }
-  .about-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--sage), var(--terracotta));
-    opacity: 0.35;
-  }
-  .about h2 {
-    font-size: 1.7rem;
-    color: var(--terracotta);
-    margin-bottom: 16px;
-  }
-  .about p { font-size: 0.98rem; }
-
-  /* Footer */
-  footer {
-    background: var(--ink);
-    color: var(--cream);
-    padding: 56px 32px 32px;
-  }
-  .footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
-  }
-  footer .fmark {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: var(--terracotta);
-  }
-  .footer-col h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    opacity: 0.6;
-    margin-bottom: 14px;
-    font-weight: 500;
-  }
-  .footer-col a, .footer-col span {
-    display: block;
-    font-size: 0.88rem;
-    text-decoration: none;
-    color: var(--cream);
-    opacity: 0.85;
-    margin-bottom: 8px;
-  }
-  .footer-bottom {
-    max-width: 1100px;
-    margin: 40px auto 0;
-    padding-top: 24px;
-    border-top: 1px solid rgba(249,246,241,0.15);
-    font-size: 0.78rem;
-    opacity: 0.55;
-  }
-
-  @media (max-width: 720px) {
-    .panels { grid-template-columns: 1fr; }
-    .panel--sourdough { border-right: none; border-bottom: 1px solid rgba(51,38,28,0.12); }
-    .about { grid-template-columns: 1fr; }
-    .about-photo { display: none; }
-    .nav-links { gap: 18px; font-size: 0.78rem; }
-  }
+  .door:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(43,36,32,0.08);}
+  .door.sourdough{border-top:3px solid var(--brown);}
+  .door.career{border-top:3px solid var(--rose);}
+  .door h2{font-size:1.6rem;margin-bottom:10px;}
+  .door p{font-size:0.92rem;color:#4a423c;margin-bottom:18px;}
+  .door .go{font-size:0.82rem;font-weight:600;}
+  .door.sourdough .go{color:var(--brown);}
+  .door.career .go{color:var(--rose);}
+  footer{margin-top:56px;font-size:0.8rem;color:#8a8078;}
 </style>
 </head>
 <body>
+  <img class="logo-mark" src="images/rooted-in-rahmah-logo.png" alt="Rooted in Rahmah">
+  <p class="tagline">Compassion, in practice.</p>
 
-<nav>
-  <a class="nav-mark" href="index.html">Rooted in Rahmah</a>
-  <div class="nav-links">
-    <a href="sourdough-studio.html">Sourdough Studio</a>
-    <a href="career-compass.html">Career Compass</a>
-    <a href="about.html">About</a>
-    <a href="resume.html">Resume</a>
-    <a href="contact.html">Contact</a>
+  <div class="doors">
+    <a class="door sourdough" href="/sourdough-studio">
+      <h2>Sourdough Studio</h2>
+      <p>Slow-fermented sourdough, baked in small batches out of my kitchen.</p>
+      <div class="go">Visit Sourdough Studio →</div>
+    </a>
+    <a class="door career" href="/career-compass">
+      <h2>Career Compass</h2>
+      <p>Guidance for the pivotal moments in your career.</p>
+      <div class="go">Visit Career Compass →</div>
+    </a>
   </div>
-</nav>
 
-<section class="hero">
-  <img class="logo-mark" src="assets/rooted-in-rahmah-logo.png" alt="Rooted in Rahmah">
-  <div class="tagline">compassion, in practice</div>
-</section>
-
-<section class="intro">
-  <p>Rahmah means mercy, compassion, care extended to others. It's the value everything here is built around: a name for the things I build, rather than a fixed idea of what they have to be.</p>
-  <p>I'm Aneeza. By day, I work in federal consulting. Alongside that, I bake, and I coach: two different crafts, same intention. This is where they live.</p>
-</section>
-
-<h2 class="projects-heading serif">Current Projects</h2>
-<div class="panels">
-  <div class="panel panel--sourdough">
-    <div class="panel-eyebrow">Baking</div>
-    <h3 class="serif">Sourdough Studio</h3>
-    <p>Slow-fermented, naturally leavened bread, baked in small batches out of my kitchen in Ellicott City. Orders close Friday; pickup is Sunday.</p>
-    <a class="visit" href="sourdough-studio.html">Visit Sourdough Studio</a>
-  </div>
-  <div class="panel panel--career">
-    <div class="panel-eyebrow">Coaching</div>
-    <h3 class="serif">Career Compass</h3>
-    <p>Resume reviews, interview prep, and coaching for people navigating a turning point in their career, drawn from my own path across federal consulting, HCI, and systems engineering.</p>
-    <a class="visit" href="career-compass.html">Visit Career Compass</a>
-  </div>
-</div>
-
-<section class="about">
-  <div class="about-photo" aria-hidden="true"></div>
-  <div>
-    <h2 class="serif">About Aneeza</h2>
-    <p>I live in Ellicott City, Maryland, where I split my time between client work, a sourdough starter I've kept alive for years, and helping people figure out their next career move. Long-term, I'm working toward teaching, and eventually a small community café, a place where both halves of this would finally share a roof.</p>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-col">
-      <span class="fmark">Rooted in Rahmah</span>
-    </div>
-    <div class="footer-col">
-      <h4>Explore</h4>
-      <a href="index.html">Home</a>
-      <a href="sourdough-studio.html">Sourdough Studio</a>
-      <a href="career-compass.html">Career Compass</a>
-      <a href="about.html">About</a>
-      <a href="resume.html">Resume</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <a href="mailto:careercompass@rootedinrahmah.com">careercompass@rootedinrahmah.com</a>
-      <span>@sourdough.studio.rr</span>
-    </div>
-  </div>
-  <div class="footer-bottom wrap">© 2026 Rooted in Rahmah. Ellicott City, Maryland.</div>
-</footer>
-
+  <footer>Ellicott City, Maryland</footer>
 </body>
 </html>
