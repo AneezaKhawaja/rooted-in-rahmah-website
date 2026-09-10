@@ -39,14 +39,17 @@
   .wordmark{display:flex;align-items:center;gap:12px;font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--rose-deep);white-space:nowrap;}
   .wordmark img{height:40px;width:auto;display:block;}
   .wordmark .label small{display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.06em;color:var(--ink);opacity:0.55;font-weight:500;}
-  .navlinks{display:flex;gap:28px;font-size:0.88rem;}
+  .navlinks{display:flex;align-items:center;gap:32px;font-size:0.88rem;}
   .navlinks a{border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s;}
   .navlinks a:hover{border-color:var(--rose);}
-  .home-link{font-size:0.78rem;opacity:0.65;}
-  .hero .logo-mark{height:130px;width:auto;margin-bottom:20px;display:block;}
+  .home-link{font-size:0.78rem;opacity:0.65;margin-left:4px;padding-left:24px;border-left:1px solid var(--line);}
 
   /* hero */
   .hero{padding:88px 0 96px;}
+  .hero-inner{display:flex;align-items:center;gap:48px;}
+  .hero-inner .logo-col{flex:1;min-width:0;}
+  .hero-inner .logo-col img{width:100%;height:auto;display:block;}
+  .hero-inner .text-col{flex:3;min-width:0;}
   .hero .kicker{font-size:0.85rem;letter-spacing:0.02em;color:var(--rose-deep);margin-bottom:14px;}
   .hero h1{font-size:2.6rem;line-height:1.15;margin-bottom:22px;}
   .hero p.lede{font-size:1.08rem;color:#4a423c;margin-bottom:30px;}
@@ -112,6 +115,8 @@
 
   @media(max-width:720px){
     .hero h1{font-size:2.2rem;}
+    .hero-inner{flex-direction:column;align-items:flex-start;gap:20px;}
+    .hero-inner .logo-col{width:140px;flex:none;}
     .tiers{grid-template-columns:1fr;}
     .resume-block{grid-template-columns:1fr;}
     .navlinks{display:none;}
@@ -136,11 +141,17 @@
 
 <section class="hero">
   <div class="wrap">
-    <img class="logo-mark" src="images/career-compass-logo.png" alt="Career Compass, Rooted in Rahmah">
-    <h1>Guidance for the pivotal moments in your career.</h1>
-    <p class="lede">Resume reviews, interview prep, and ongoing mentorship from someone who's built a career in federal consulting and knows what actually gets you through the door.</p>
-    <a href="#pricing" class="btn">See services & pricing</a>
-    <a href="#contact" class="btn-ghost">Request a session</a>
+    <div class="hero-inner">
+      <div class="logo-col">
+        <img src="images/career-compass-logo.png" alt="Career Compass, Rooted in Rahmah">
+      </div>
+      <div class="text-col">
+        <h1>Guidance for the pivotal moments in your career.</h1>
+        <p class="lede">Resume reviews, interview prep, and ongoing mentorship from someone who's built a career in federal consulting and knows what actually gets you through the door.</p>
+        <a href="#pricing" class="btn">See services & pricing</a>
+        <a href="#contact" class="btn-ghost">Request a session</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -163,6 +174,7 @@
         <div class="price">$75</div>
         <ul>
           <li>Full line-by-line rewrite & formatting pass</li>
+          <li>One review session/walkthrough of recommendations & advice</li>
           <li>Standard turnaround: about a week</li>
           <li>Rush (3-day or weekend delivery): +$30</li>
         </ul>

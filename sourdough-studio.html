@@ -36,13 +36,16 @@
   nav.wrap{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:18px 32px;}
   .wordmark{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--brown);white-space:nowrap;}
   .wordmark small{display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.06em;color:var(--ink);opacity:0.55;font-weight:500;}
-  .navlinks{display:flex;gap:28px;font-size:0.88rem;}
+  .navlinks{display:flex;align-items:center;gap:32px;font-size:0.88rem;}
   .navlinks a{border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s;}
   .navlinks a:hover{border-color:var(--terracotta);}
-  .home-link{font-size:0.78rem;opacity:0.65;}
+  .home-link{font-size:0.78rem;opacity:0.65;margin-left:4px;padding-left:24px;border-left:1px solid var(--line);}
 
   .hero{padding:88px 0 96px;}
-  .hero .logo-mark{height:130px;width:auto;margin-bottom:20px;display:block;}
+  .hero-inner{display:flex;align-items:center;gap:48px;}
+  .hero-inner .logo-col{flex:1;min-width:0;}
+  .hero-inner .logo-col img{width:100%;height:auto;display:block;}
+  .hero-inner .text-col{flex:3;min-width:0;}
   .hero .kicker{font-size:0.85rem;letter-spacing:0.02em;color:var(--brown);margin-bottom:14px;}
   .hero h1{font-size:2.6rem;line-height:1.15;margin-bottom:22px;}
   .hero p.lede{font-size:1.08rem;color:#4a423c;margin-bottom:30px;}
@@ -75,7 +78,7 @@
   }
   .menu-card .photo img{width:100%;height:100%;object-fit:cover;display:block;}
   .menu-card .body{padding:20px 22px;}
-  .menu-card .name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:6px;}
+  .menu-card .name{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.3rem;margin-bottom:6px;}
   .menu-card .desc{font-size:0.87rem;color:#4a423c;margin-bottom:12px;}
   .menu-card .sizes{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:0.85rem;color:#4a423c;margin-bottom:12px;}
   .menu-card .ingredients{font-size:0.78rem;color:#8a8078;font-style:italic;padding-top:10px;border-top:1px solid var(--line);}
@@ -116,6 +119,8 @@
 
   @media(max-width:720px){
     .hero h1{font-size:2.2rem;}
+    .hero-inner{flex-direction:column;align-items:flex-start;gap:20px;}
+    .hero-inner .logo-col{width:140px;flex:none;}
     .how-it-works{grid-template-columns:1fr;}
     .navlinks{display:none;}
     .menu-grid{grid-template-columns:1fr;}
@@ -143,11 +148,17 @@
 
 <section class="hero">
   <div class="wrap">
-    <img class="logo-mark" src="images/sourdough-studio-logo.png" alt="Sourdough Studio, Rooted in Rahmah">
-    <h1>Slow-fermented sourdough, baked in small batches out of my kitchen.</h1>
-    <p class="lede">A cottage bakery rooted in years of sourdough practice, naturally leavened, made in small batches, and baked to order out of Ellicott City, Maryland.</p>
-    <a href="#menu" class="btn">See what I bake</a>
-    <a href="#order" class="btn-ghost">Reserve an order</a>
+    <div class="hero-inner">
+      <div class="logo-col">
+        <img src="images/sourdough-studio-logo.png" alt="Sourdough Studio, Rooted in Rahmah">
+      </div>
+      <div class="text-col">
+        <h1>Slow-fermented sourdough, baked in small batches out of my kitchen.</h1>
+        <p class="lede">A cottage bakery rooted in years of sourdough practice, naturally leavened, made in small batches, and baked to order out of Ellicott City, Maryland.</p>
+        <a href="#menu" class="btn">See what I bake</a>
+        <a href="#order" class="btn-ghost">Reserve an order</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -178,7 +189,7 @@
           <div class="name">Classic Sourdough</div>
           <div class="desc">Our signature naturally leavened loaf: crisp crust, soft tangy crumb.</div>
           <div class="sizes"><span>Small $10</span><span>Medium $14</span><span>Large $16</span></div>
-          <div class="ingredients">All-purpose flour, water, salt, sourdough starter</div>
+          <div class="ingredients"><strong>Ingredients:</strong> all-purpose flour, water, salt, sourdough starter</div>
         </div>
       </div>
       <div class="menu-card">
@@ -187,7 +198,7 @@
           <div class="name">Jalapeño Cheddar Sourdough</div>
           <div class="desc">Classic sourdough folded with jalapeños and mild cheddar.</div>
           <div class="sizes"><span>Small $12</span><span>Medium $16</span><span>Large $20</span></div>
-          <div class="ingredients">All-purpose flour, water, salt, sourdough starter, jalapeños, mild cheddar</div>
+          <div class="ingredients"><strong>Ingredients:</strong> all-purpose flour, water, salt, sourdough starter, jalapeños, mild cheddar</div>
         </div>
       </div>
       <div class="menu-card">
@@ -196,7 +207,7 @@
           <div class="name">Buttery Sourdough</div>
           <div class="desc">The classic base, enriched with butter for a softer, richer crumb.</div>
           <div class="sizes"><span>Small $12</span><span>Medium $16</span><span>Large $20</span></div>
-          <div class="ingredients">All-purpose flour, water, salt, sourdough starter, butter</div>
+          <div class="ingredients"><strong>Ingredients:</strong> all-purpose flour, water, salt, sourdough starter, butter</div>
         </div>
       </div>
       <div class="menu-card">
@@ -205,7 +216,7 @@
           <div class="name">Almost Sourdough Almond Bread</div>
           <div class="desc">A gentler loaf for anyone watching their blood sugar or eating lower-carb.</div>
           <div class="sizes"><span>Small $12</span><span>Medium $16</span><span>Large $20</span></div>
-          <div class="ingredients">Almond flour, sourdough starter, quinoa flour, eggs, olive oil, baking soda, salt</div>
+          <div class="ingredients"><strong>Ingredients:</strong> almond flour, sourdough starter, quinoa flour, eggs, olive oil, baking soda, salt</div>
         </div>
       </div>
       <div class="menu-card">
@@ -214,7 +225,7 @@
           <div class="name">Custom Sourdough</div>
           <div class="desc">Same slow-fermented base. Tell me what you're craving and I'll make it happen.</div>
           <div class="sizes"><span>Small $12</span><span>Medium $16</span><span>Large $20</span></div>
-          <div class="ingredients">Base of all-purpose flour, water, salt, sourdough starter; customizations vary by request</div>
+          <div class="ingredients"><strong>Ingredients:</strong> base of all-purpose flour, water, salt, sourdough starter; customizations vary by request</div>
         </div>
       </div>
     </div>
@@ -232,7 +243,7 @@
           <div class="name">Brown Butter Chocolate Chip Cookies</div>
           <div class="desc">Chewy cookies made with nutty brown butter and milk chocolate chips.</div>
           <div class="sizes"><span>$3.50 each</span><span>$18/box of 6</span><span>$32/box of 12</span></div>
-          <div class="ingredients">Flour, sugar, salt, baking soda, baking powder, milk chocolate chips, eggs, brown butter, vanilla extract</div>
+          <div class="ingredients"><strong>Ingredients:</strong> flour, sugar, salt, baking soda, baking powder, milk chocolate chips, eggs, brown butter, vanilla extract</div>
         </div>
       </div>
     </div>
