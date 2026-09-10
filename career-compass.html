@@ -35,8 +35,8 @@
     backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
   }
-  nav.wrap{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;}
-  .wordmark{display:flex;align-items:center;gap:12px;font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--rose-deep);}
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:18px 32px;}
+  .wordmark{display:flex;align-items:center;gap:12px;font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--rose-deep);white-space:nowrap;}
   .wordmark img{height:40px;width:auto;display:block;}
   .wordmark .label small{display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.06em;color:var(--ink);opacity:0.55;font-weight:500;}
   .navlinks{display:flex;gap:28px;font-size:0.88rem;}
@@ -48,7 +48,7 @@
   /* hero */
   .hero{padding:88px 0 96px;}
   .hero .kicker{font-size:0.85rem;letter-spacing:0.02em;color:var(--rose-deep);margin-bottom:14px;}
-  .hero h1{font-size:2.6rem;max-width:18ch;line-height:1.15;margin-bottom:22px;}
+  .hero h1{font-size:2.6rem;line-height:1.15;margin-bottom:22px;}
   .hero p.lede{max-width:52ch;font-size:1.08rem;color:#4a423c;margin-bottom:30px;}
   .btn{
     display:inline-block;background:var(--rose-deep);color:var(--cream);
@@ -103,6 +103,9 @@
     padding:10px 12px;font-family:'Montserrat',sans-serif;font-size:0.9rem;
   }
   .field textarea{min-height:90px;resize:vertical;}
+  .field-check label{display:flex;align-items:flex-start;gap:10px;font-size:0.85rem;color:var(--ink);cursor:pointer;}
+  .field-check input[type="checkbox"]{width:auto;margin-top:3px;accent-color:var(--rose-deep);}
+  .gcal-note{font-size:0.85rem;color:#4a423c;margin-bottom:10px;}
 
   footer{padding:40px 0 60px;font-size:0.82rem;color:#4a423c;}
   footer a{color:var(--rose-deep);border-bottom:1px solid var(--rose-deep);}
@@ -168,18 +171,22 @@
         <h3>Interview Prep</h3>
         <div class="price">$150<span>/mo</span></div>
         <ul>
+          <li>Two sessions per month</li>
           <li>Mock interviews tailored to your target role</li>
           <li>Behavioral & technical question prep</li>
           <li>Scheduled directly on my calendar</li>
+          <li>Unused sessions don't carry over. A new month means a fresh Interview Prep purchase</li>
         </ul>
       </div>
       <div class="tier">
         <h3>Mentorship</h3>
-        <div class="price">$225<span>/mo</span></div>
+        <div class="price">$250<span>/mo</span></div>
         <ul>
+          <li>Four sessions per month</li>
           <li>Ongoing 1:1 career strategy sessions</li>
           <li>Job search & pivot planning</li>
           <li>Scheduled directly on my calendar</li>
+          <li>Unused sessions don't carry over. A new month means a fresh Mentorship purchase</li>
         </ul>
       </div>
     </div>
@@ -245,19 +252,28 @@
       <p>Tell me a bit about what you're looking for and I'll personally follow up with scheduling and payment details.</p>
       <form action="https://formspree.io/f/xrpgrjgo" method="POST">
         <input type="hidden" name="_subject" value="Career Compass: Session Request">
+        <input type="hidden" name="_next" value="https://rootedinrahmah.com/thank-you-career-compass.html">
         <div class="field"><label>Name <span class="tag req">required</span></label><input type="text" name="name" required></div>
         <div class="field"><label>Email <span class="tag req">required</span></label><input type="email" name="email" required></div>
         <div class="field"><label>Phone <span class="tag">optional</span></label><input type="tel" name="phone"></div>
         <div class="field">
-          <label>Service</label>
-          <select name="service">
+          <label>Service <span class="tag req">required</span></label>
+          <select name="service" required>
+            <option value="" disabled selected>Select a service</option>
             <option>Resume Review</option>
             <option>Interview Prep</option>
             <option>Mentorship</option>
             <option>Not sure yet</option>
           </select>
         </div>
-        <div class="field"><label>Preferred date <span class="tag">optional</span></label><input type="text" name="date" placeholder="e.g. week of Sept 22"></div>
+        <div class="field">
+          <label>Schedule a time <span class="tag req">required</span></label>
+          <p class="gcal-note">Pick whatever slot works best for you on my calendar, then confirm below.</p>
+          <a href="https://calendar.google.com/calendar/appointments/schedules/PASTE-YOUR-LINK-HERE" target="_blank" rel="noopener" class="btn-ghost">Open my calendar →</a>
+        </div>
+        <div class="field field-check">
+          <label><input type="checkbox" name="calendar_confirmed" value="Yes, I selected a time" required><span>I've selected a time on the calendar for this session</span></label>
+        </div>
         <div class="field"><label>Notes <span class="tag">optional</span></label><textarea name="notes" placeholder="Anything else I should know"></textarea></div>
         <button type="submit" class="btn">Request this session</button>
       </form>
@@ -273,6 +289,7 @@
       <p>Not ready to book, or just want to ask something first? Send a note and I'll get back to you.</p>
       <form action="https://formspree.io/f/xoeqyrve" method="POST">
         <input type="hidden" name="_subject" value="Career Compass: Question">
+        <input type="hidden" name="_next" value="https://rootedinrahmah.com/thank-you-career-compass.html">
         <div class="field"><label>Name <span class="tag req">required</span></label><input type="text" name="name" required></div>
         <div class="field"><label>Email <span class="tag req">required</span></label><input type="email" name="email" required></div>
         <div class="field"><label>Message <span class="tag req">required</span></label><textarea name="message" placeholder="What's on your mind?" required></textarea></div>
