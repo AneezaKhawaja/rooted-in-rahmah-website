@@ -46,9 +46,9 @@
   .hero .logo-mark{height:130px;width:auto;margin-bottom:20px;display:block;}
 
   /* hero */
-  .hero{padding:88px 0 72px;}
+  .hero{padding:88px 0 96px;}
   .hero .kicker{font-size:0.85rem;letter-spacing:0.02em;color:var(--rose-deep);margin-bottom:14px;}
-  .hero h1{font-size:3rem;max-width:11ch;line-height:1.08;margin-bottom:22px;}
+  .hero h1{font-size:2.6rem;max-width:18ch;line-height:1.15;margin-bottom:22px;}
   .hero p.lede{max-width:52ch;font-size:1.08rem;color:#4a423c;margin-bottom:30px;}
   .btn{
     display:inline-block;background:var(--rose-deep);color:var(--cream);
@@ -96,6 +96,8 @@
   .contact-box p{font-size:0.92rem;color:#4a423c;margin-bottom:18px;}
   .field{margin-bottom:16px;}
   .field label{display:block;font-size:0.78rem;margin-bottom:6px;color:#4a423c;}
+  .field label .tag{font-style:italic;opacity:0.6;font-size:0.72rem;}
+  .field label .tag.req{color:var(--brown, var(--rose-deep));opacity:0.85;}
   .field input, .field select, .field textarea{
     width:100%;border:1px solid var(--line);background:var(--cream);
     padding:10px 12px;font-family:'Montserrat',sans-serif;font-size:0.9rem;
@@ -143,7 +145,7 @@
   <div class="wrap">
     <div class="eyebrow">About</div>
     <h2>A little about your coach</h2>
-    <p>I'm Aneeza — a consultant at Deloitte, supporting the federal health sector with AI adoption and enablement work. Before that, I spent about three years at Accenture Federal Services. I hold dual master's degrees: one in Human-Computer Interaction from the University of Maryland and one in Systems Engineering from Johns Hopkins.</p>
+    <p>I'm Aneeza, a consultant at Deloitte, supporting the federal health sector with AI adoption and enablement work. Before that, I spent about three years at Accenture Federal Services. I hold dual master's degrees: one in Human-Computer Interaction from the University of Maryland and one in Systems Engineering from Johns Hopkins.</p>
     <p>Career Compass grew out of a simple realization: the hardest part of a job search usually isn't the work itself, it's not knowing how the process actually works from the inside. I coach resume reviews, interview prep, and longer-term mentorship rooted in what I've learned navigating federal consulting, large-scale hiring processes, and my own career pivots.</p>
   </div>
 </section>
@@ -151,7 +153,7 @@
 <section class="pricing" id="pricing">
   <div class="wrap">
     <div class="eyebrow">Services</div>
-    <h2>Work with me</h2>
+    <h2>Here's what I offer</h2>
     <div class="tiers">
       <div class="tier">
         <h3>Resume Review</h3>
@@ -219,7 +221,7 @@
         <h3>Experience</h3>
         <div class="exp-item">
           <div class="role">AI Enablement Consultant</div>
-          <div class="org">Deloitte — Government & Public Services, federal health sector</div>
+          <div class="org">Deloitte: Government & Public Services, federal health sector</div>
           <div class="when">April 2024 – Present</div>
         </div>
         <div class="exp-item">
@@ -242,10 +244,10 @@
     <div class="contact-box">
       <p>Tell me a bit about what you're looking for and I'll personally follow up with scheduling and payment details.</p>
       <form action="https://formspree.io/f/xrpgrjgo" method="POST">
-        <input type="hidden" name="_subject" value="Career Compass — Session Request">
-        <div class="field"><label>Name</label><input type="text" name="name" required></div>
-        <div class="field"><label>Email</label><input type="email" name="email" required></div>
-        <div class="field"><label>Phone</label><input type="tel" name="phone"></div>
+        <input type="hidden" name="_subject" value="Career Compass: Session Request">
+        <div class="field"><label>Name <span class="tag req">required</span></label><input type="text" name="name" required></div>
+        <div class="field"><label>Email <span class="tag req">required</span></label><input type="email" name="email" required></div>
+        <div class="field"><label>Phone <span class="tag">optional</span></label><input type="tel" name="phone"></div>
         <div class="field">
           <label>Service</label>
           <select name="service">
@@ -255,8 +257,8 @@
             <option>Not sure yet</option>
           </select>
         </div>
-        <div class="field"><label>Preferred date</label><input type="text" name="date" placeholder="e.g. week of Sept 22"></div>
-        <div class="field"><label>Notes</label><textarea name="notes" placeholder="Anything else I should know"></textarea></div>
+        <div class="field"><label>Preferred date <span class="tag">optional</span></label><input type="text" name="date" placeholder="e.g. week of Sept 22"></div>
+        <div class="field"><label>Notes <span class="tag">optional</span></label><textarea name="notes" placeholder="Anything else I should know"></textarea></div>
         <button type="submit" class="btn">Request this session</button>
       </form>
     </div>
@@ -270,10 +272,10 @@
     <div class="contact-box">
       <p>Not ready to book, or just want to ask something first? Send a note and I'll get back to you.</p>
       <form action="https://formspree.io/f/xoeqyrve" method="POST">
-        <input type="hidden" name="_subject" value="Career Compass — Question">
-        <div class="field"><label>Name</label><input type="text" name="name" required></div>
-        <div class="field"><label>Email</label><input type="email" name="email" required></div>
-        <div class="field"><label>Message</label><textarea name="message" placeholder="What's on your mind?" required></textarea></div>
+        <input type="hidden" name="_subject" value="Career Compass: Question">
+        <div class="field"><label>Name <span class="tag req">required</span></label><input type="text" name="name" required></div>
+        <div class="field"><label>Email <span class="tag req">required</span></label><input type="email" name="email" required></div>
+        <div class="field"><label>Message <span class="tag req">required</span></label><textarea name="message" placeholder="What's on your mind?" required></textarea></div>
         <button type="submit" class="btn">Send message</button>
       </form>
     </div>
@@ -282,7 +284,7 @@
 
 <footer>
   <div class="wrap">
-    <p>Career Compass, part of <a href="index.html">Rooted in Rahmah</a> — careercompass@rootedinrahmah.com</p>
+    <p>Career Compass, part of <a href="index.html">Rooted in Rahmah</a> · careercompass@rootedinrahmah.com</p>
   </div>
 </footer>
 
