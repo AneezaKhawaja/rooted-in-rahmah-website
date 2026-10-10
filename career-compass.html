@@ -88,6 +88,20 @@
   .tier li:first-child{border-top:none;}
   .note{margin-top:22px;font-size:0.88rem;color:#4a423c;font-style:italic;}
 
+  /* workshops */
+  .workshop-intro{color:#4a423c;margin-bottom:24px;max-width:680px;}
+  .events{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .event{background:#fff;border:1px solid var(--line);border-top:3px solid var(--rose-deep);padding:26px;display:flex;flex-direction:column;}
+  .event .date{font-size:0.78rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--rose-deep);margin-bottom:6px;}
+  .event h3{font-size:1.4rem;margin-bottom:8px;}
+  .event .meta{font-size:0.85rem;color:#4a423c;margin-bottom:16px;flex-grow:1;}
+  .event .meta div{padding:3px 0;}
+  .event .btn, .event .btn-ghost{align-self:flex-start;margin-top:auto;}
+  .event.placeholder{border-top-color:var(--line);background:transparent;border-style:dashed;}
+
+  /* about + background */
+  .about-intro{max-width:720px;margin-bottom:40px;}
+
   /* resume */
   .resume-block{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
   .resume-col h3{font-size:1.2rem;margin-bottom:14px;color:var(--rose-deep);}
@@ -125,6 +139,7 @@
     .hero-inner .logo-col{width:200px;flex:none;}
     .tiers{grid-template-columns:1fr;}
     .resume-block{grid-template-columns:1fr;}
+    .events{grid-template-columns:1fr;}
     .navlinks{display:none;}
   }
 </style>
@@ -135,12 +150,12 @@
   <nav class="wrap">
     <div class="wordmark"><span class="label">Career Compass<small>Rooted in Rahmah</small></span></div>
     <div class="navlinks">
-      <a href="#about">About</a>
       <a href="#pricing">Services</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
+      <a href="#workshops">Workshops</a>
+      <a href="#contact">Book</a>
+      <a href="#about">About</a>
       <a href="#questions">Questions</a>
-      <a class="home-link" href="index.html">Rooted in Rahmah ↗</a>
+      <a class="home-link" href="https://rootedinrahmah.com/index.html">Rooted in Rahmah ↗</a>
     </div>
   </nav>
 </header>
@@ -149,24 +164,15 @@
   <div class="wrap">
     <div class="hero-inner">
       <div class="logo-col">
-        <img src="career-compass-logo.png" alt="Career Compass, Rooted in Rahmah">
+        <img src="https://rootedinrahmah.com/career-compass-logo.png" alt="Career Compass, Rooted in Rahmah">
       </div>
       <div class="text-col">
         <h1>Guidance for the pivotal moments in your career.</h1>
-        <p class="lede">Resume reviews, interview prep, and ongoing mentorship from someone who's built a career in federal consulting and knows what actually gets you through the door.</p>
-        <a href="#pricing" class="btn">See services & pricing</a>
+        <p class="lede">Resume reviews, interview prep, workshops, and ongoing mentorship from someone who's built a career in federal consulting and knows what actually gets you through the door.</p>
+        <a href="#pricing" class="btn">See services &amp; pricing</a>
         <a href="#contact" class="btn-ghost">Request a session</a>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <div class="wrap">
-    <div class="eyebrow">About</div>
-    <h2>A little about your coach</h2>
-    <p>I'm Aneeza, a consultant at Deloitte, supporting the federal health sector with AI adoption and enablement work. Before that, I spent about three years at Accenture Federal Services. I hold dual master's degrees: one in Human-Computer Interaction from the University of Maryland and one in Systems Engineering from Johns Hopkins.</p>
-    <p>Career Compass grew out of a simple realization: the hardest part of a job search usually isn't the work itself, it's not knowing how the process actually works from the inside. I coach resume reviews, interview prep, and longer-term mentorship rooted in what I've learned navigating federal consulting, large-scale hiring processes, and my own career pivots.</p>
   </div>
 </section>
 
@@ -212,51 +218,33 @@
   </div>
 </section>
 
-<section class="resume" id="resume">
+<section class="workshops" id="workshops">
   <div class="wrap">
-    <div class="eyebrow">Background</div>
-    <h2>Snapshot of my experience</h2>
-    <div class="resume-block">
-      <div class="resume-col">
-        <h3>Education</h3>
-        <div class="edu-item">
-          <div class="role">M.S., Human-Computer Interaction</div>
-          <div class="org">University of Maryland</div>
-          <div class="when">Expected May 2026</div>
+    <div class="eyebrow">Workshops</div>
+    <h2>Learn in a group</h2>
+    <p class="workshop-intro">I run hands-on resume and interview workshops in the community, starting in Howard County and growing to Montgomery County, DC, and Virginia. Bring your resume and your questions. Admission is $15 per person.</p>
+    <div class="events">
+      <!--
+        To add a workshop, copy this block, fill it in, and paste it above the placeholder card:
+        <div class="event">
+          <div class="date">Sat, Nov 8 · 10 AM – 12 PM</div>
+          <h3>Resume Workshop</h3>
+          <div class="meta">
+            <div>Library name, Howard County</div>
+            <div>Street address, City, MD</div>
+            <div>$15 per person</div>
+          </div>
+          <a href="EVENTBRITE LINK" target="_blank" rel="noopener" class="btn">Register</a>
         </div>
-        <div class="edu-item">
-          <div class="role">M.S., Systems Engineering</div>
-          <div class="org">Johns Hopkins Engineering for Professionals</div>
-          <div class="when">May 2025</div>
+      -->
+      <div class="event placeholder">
+        <div class="date">Dates coming soon</div>
+        <h3>Resume &amp; Interview Workshop</h3>
+        <div class="meta">
+          <div>Howard County library location</div>
+          <div>$15 per person</div>
         </div>
-        <div class="edu-item">
-          <div class="role">B.S., Information Science</div>
-          <div class="org">University of Maryland</div>
-          <div class="when">December 2020</div>
-        </div>
-        <h3 style="margin-top:26px;">Areas of Expertise</h3>
-        <div class="skills-list">
-          <span>AI adoption & enablement</span><span>Applied AI / Vertex AI</span>
-          <span>Salesforce</span><span>Tableau</span><span>Python</span>
-          <span>R</span><span>SQL</span>
-          <span>Stakeholder management</span><span>Agile delivery</span>
-        </div>
-      </div>
-      <div class="resume-col">
-        <h3>Experience</h3>
-        <div class="exp-item">
-          <div class="role">AI Enablement Consultant</div>
-          <div class="org">Deloitte: Government & Public Services, federal health sector</div>
-          <div class="when">April 2024 – Present</div>
-        </div>
-        <div class="exp-item">
-          <div class="role">Consultant</div>
-          <div class="org">Accenture Federal Services</div>
-          <div class="when">~3 years</div>
-        </div>
-        <div class="resume-cta">
-          <a href="resume-aneeza.pdf" class="btn-ghost">Download full resume (PDF)</a>
-        </div>
+        <a href="#questions" class="btn-ghost" style="margin-left:0;">Ask to be notified</a>
       </div>
     </div>
   </div>
@@ -280,6 +268,7 @@
             <option>Resume Review</option>
             <option>Interview Prep</option>
             <option>Mentorship</option>
+            <option>Workshop (group)</option>
             <option>Not sure yet</option>
           </select>
         </div>
@@ -294,6 +283,57 @@
         <div class="field"><label>Notes <span class="tag">optional</span></label><textarea name="notes" placeholder="Anything else I should know"></textarea></div>
         <button type="submit" class="btn">Request this session</button>
       </form>
+    </div>
+  </div>
+</section>
+
+<section class="resume" id="about">
+  <div class="wrap">
+    <div class="eyebrow">About</div>
+    <h2>A little about your coach</h2>
+    <div class="about about-intro">
+      <p>I'm Aneeza, a consultant supporting the federal health sector with AI adoption and enablement work. Before that, I spent about three years at Accenture Federal Services. I hold dual master's degrees: one in Human-Computer Interaction from the University of Maryland and one in Systems Engineering from Johns Hopkins.</p>
+      <p>Career Compass grew out of a simple realization: the hardest part of a job search usually isn't the work itself, it's not knowing how the process actually works from the inside. I coach resume reviews, interview prep, and longer-term mentorship rooted in what I've learned navigating federal consulting, large-scale hiring processes, and my own career pivots.</p>
+    </div>
+    <div class="resume-block">
+      <div class="resume-col">
+        <h3>Education</h3>
+        <div class="edu-item">
+          <div class="role">M.S., Human-Computer Interaction</div>
+          <div class="org">University of Maryland</div>
+          <div class="when">May 2026</div>
+        </div>
+        <div class="edu-item">
+          <div class="role">M.S., Systems Engineering</div>
+          <div class="org">Johns Hopkins Engineering for Professionals</div>
+          <div class="when">May 2025</div>
+        </div>
+        <div class="edu-item">
+          <div class="role">B.S., Information Science</div>
+          <div class="org">University of Maryland</div>
+          <div class="when">December 2020</div>
+        </div>
+      </div>
+      <div class="resume-col">
+        <h3>Experience</h3>
+        <div class="exp-item">
+          <div class="role">AI Enablement Consultant</div>
+          <div class="org">Federal health sector</div>
+          <div class="when">2024 – Present</div>
+        </div>
+        <div class="exp-item">
+          <div class="role">Consultant</div>
+          <div class="org">Accenture Federal Services</div>
+          <div class="when">~3 years</div>
+        </div>
+        <h3 style="margin-top:26px;">Areas of Expertise</h3>
+        <div class="skills-list">
+          <span>AI adoption &amp; enablement</span><span>Applied AI / Vertex AI</span>
+          <span>Salesforce</span><span>Tableau</span><span>Python</span>
+          <span>R</span><span>SQL</span>
+          <span>Stakeholder management</span><span>Agile delivery</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -317,7 +357,7 @@
 
 <footer>
   <div class="wrap">
-    <p>Career Compass, part of <a href="index.html">Rooted in Rahmah</a> · careercompass@rootedinrahmah.com</p>
+    <p>Career Compass, part of <a href="https://rootedinrahmah.com/index.html">Rooted in Rahmah</a> · careercompass@rootedinrahmah.com</p>
   </div>
 </footer>
 
