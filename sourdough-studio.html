@@ -91,6 +91,10 @@
   .photo-disclaimer{font-size:0.8rem;color:#8a8078;font-style:italic;margin-bottom:20px;max-width:none;}
   .size-legend{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:28px;font-size:0.85rem;color:#4a423c;}
   .size-legend span strong{color:var(--brown);}
+  .subhead{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--brown);margin:36px 0 14px;}
+  .subhead:first-of-type{margin-top:0;}
+  .coming{background:#fff;border:1px dashed var(--brown);padding:22px 24px;margin-top:32px;font-size:0.9rem;color:#4a423c;}
+  .coming strong{color:var(--ink);font-family:'Cormorant Garamond',serif;font-size:1.2rem;display:block;margin-bottom:6px;}
   .menu-card .name-badge{display:inline-block;font-size:0.68rem;letter-spacing:0.03em;color:var(--brown);border:1px solid var(--brown);padding:2px 8px;margin-bottom:8px;}
 
   .how-it-works{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px;}
@@ -136,7 +140,13 @@
     .hero-inner{flex-direction:column;align-items:flex-start;gap:20px;}
     .hero-inner .logo-col{width:200px;flex:none;}
     .how-it-works{grid-template-columns:1fr;}
-    .navlinks{display:none;}
+    nav.wrap{flex-direction:column;align-items:flex-start;gap:10px;padding:14px 20px;}
+    .navlinks{width:100%;gap:20px;overflow-x:auto;white-space:nowrap;font-size:0.82rem;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+    .navlinks::-webkit-scrollbar{display:none;}
+    .home-link{padding-left:16px;}
+    .wrap{padding:0 20px;}
+    .hero{padding:48px 0 56px;}
+    .btn-ghost{margin-left:0;margin-top:12px;}
     .menu-grid{grid-template-columns:1fr;}
     .order-item{grid-template-columns:1fr;gap:6px;}
     .order-items-label{display:none;}
@@ -154,8 +164,8 @@
     <div class="wordmark">Sourdough Studio<small>Rooted in Rahmah</small></div>
     <div class="navlinks">
       <a href="#menu">Menu</a>
-      <a href="#discard">Sweets &amp; Starter</a>
-      <a href="#pickup">Pickup</a>
+      <a href="#discard">Discard &amp; Sweets</a>
+      <a href="#pickup">Markets</a>
       <a href="#order">Order</a>
       <a href="#about">About</a>
       <a class="home-link" href="https://rootedinrahmah.com/index.html">Rooted in Rahmah ↗</a>
@@ -170,6 +180,7 @@
         <img src="https://rootedinrahmah.com/sourdough-studio-logo.png" alt="Sourdough Studio, Rooted in Rahmah">
       </div>
       <div class="text-col">
+        <div class="kicker">I make all things sourdough.</div>
         <h1>Slow-fermented sourdough, baked in small batches out of my kitchen.</h1>
         <p class="lede">A cottage bakery rooted in years of sourdough practice, naturally leavened, made in small batches, and baked to order out of Ellicott City, Maryland.</p>
         <a href="#menu" class="btn">See the menu</a>
@@ -191,40 +202,52 @@
     </div>
     <div class="menu-grid">
       <div class="menu-card">
-        <div class="photo"><img src="https://images.unsplash.com/photo-1620921592619-652411a0d01a?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Classic Sourdough loaf" loading="lazy"></div>
-        <div class="body">
-          <div class="name">Classic Sourdough</div>
-          <div class="desc">Our signature naturally leavened loaf: crisp crust, soft tangy crumb.</div>
-          <div class="sizes"><span>Small $10</span><span>Medium $14</span><span>Large $16</span></div>
-          <div class="ingredients"><strong>Ingredients:</strong> all-purpose flour, water, salt, sourdough starter</div>
-        </div>
-      </div>
-      <div class="menu-card">
         <div class="photo"><img src="https://rootedinrahmah.com/jalapeno-cheddar-sourdough.jpg" alt="Jalapeño Cheddar Sourdough loaf" loading="lazy"></div>
         <div class="body">
           <div class="name-badge">Best seller</div>
           <div class="name">Jalapeño Cheddar Sourdough</div>
           <div class="desc">Classic sourdough folded with jalapeños and mild cheddar.</div>
-          <div class="sizes"><span>Small $12</span><span>Medium $16</span><span>Large $20</span></div>
-          <div class="ingredients"><strong>Ingredients:</strong> all-purpose flour, water, salt, sourdough starter, jalapeños, mild cheddar</div>
+          <div class="sizes"><span>Small $14</span><span>Medium $18</span><span>Large $22</span></div>
+          <div class="ingredients"><strong>Ingredients:</strong> all-purpose flour, bread flour, water, salt, sourdough starter, jalapeños, mild cheddar</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="photo">Photo coming soon</div>
+        <div class="body">
+          <div class="name-badge">New</div>
+          <div class="name">Garlic &amp; Herb Sourdough</div>
+          <div class="desc">Sourdough swirled with garlic, herbs, and butter. A savory crowd favorite.</div>
+          <div class="sizes"><span>Small $14</span><span>Medium $18</span><span>Large $22</span></div>
+          <div class="ingredients"><strong>Ingredients:</strong> all-purpose flour, bread flour, water, salt, sourdough starter, garlic, herbs, butter</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="photo">Photo coming soon</div>
+        <div class="body">
+          <div class="name-badge">New</div>
+          <div class="name">Cheesy Garlic Sourdough</div>
+          <div class="desc">Garlic sourdough loaded with melty mozzarella.</div>
+          <div class="sizes"><span>Small $14</span><span>Medium $18</span><span>Large $22</span></div>
+          <div class="ingredients"><strong>Ingredients:</strong> all-purpose flour, bread flour, water, salt, sourdough starter, garlic, mozzarella</div>
         </div>
       </div>
       <div class="menu-card">
         <div class="photo"><img src="https://images.unsplash.com/photo-1675725291010-cb1020860cb2?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Buttery Sourdough loaf" loading="lazy"></div>
         <div class="body">
+          <div class="name-badge">Limited batches</div>
           <div class="name">Buttery Sourdough</div>
           <div class="desc">The classic base, enriched with butter for a softer, richer crumb.</div>
-          <div class="sizes"><span>Small $12</span><span>Medium $16</span><span>Large $20</span></div>
-          <div class="ingredients"><strong>Ingredients:</strong> all-purpose flour, water, salt, sourdough starter, butter</div>
+          <div class="sizes"><span>Small $14</span><span>Medium $18</span><span>Large $22</span></div>
+          <div class="ingredients"><strong>Ingredients:</strong> all-purpose flour, bread flour, water, salt, sourdough starter, butter</div>
         </div>
       </div>
       <div class="menu-card">
-        <div class="photo"><img src="https://images.unsplash.com/photo-1599743271551-da8b8faacc5b?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Almost Sourdough Almond Bread" loading="lazy"></div>
+        <div class="photo"><img src="https://images.unsplash.com/photo-1620921592619-652411a0d01a?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Classic Sourdough loaf" loading="lazy"></div>
         <div class="body">
-          <div class="name">Almost Sourdough Almond Bread</div>
-          <div class="desc">A gentler loaf for anyone watching their blood sugar or eating lower-carb.</div>
-          <div class="sizes"><span>Small $12</span><span>Medium $16</span><span>Large $20</span><span>Slice $3.50</span></div>
-          <div class="ingredients"><strong>Ingredients:</strong> almond flour, sourdough starter, quinoa flour, eggs, olive oil, baking soda, salt</div>
+          <div class="name">Classic Sourdough</div>
+          <div class="desc">The naturally leavened loaf everything starts from: crisp crust, soft tangy crumb.</div>
+          <div class="sizes"><span>Small $12</span><span>Medium $15</span><span>Large $18</span></div>
+          <div class="ingredients"><strong>Ingredients:</strong> all-purpose flour, bread flour, water, salt, sourdough starter</div>
         </div>
       </div>
       <div class="menu-card">
@@ -232,8 +255,8 @@
         <div class="body">
           <div class="name">Custom Sourdough</div>
           <div class="desc">Same slow-fermented base. Tell me what you're craving and I'll make it happen.</div>
-          <div class="sizes"><span>Small $12</span><span>Medium $16</span><span>Large $20</span></div>
-          <div class="ingredients"><strong>Ingredients:</strong> base of all-purpose flour, water, salt, sourdough starter; customizations vary by request</div>
+          <div class="sizes"><span>Small $14</span><span>Medium $18</span><span>Large $22</span></div>
+          <div class="ingredients"><strong>Ingredients:</strong> base of all-purpose flour, bread flour, water, salt, sourdough starter; customizations vary by request</div>
         </div>
       </div>
     </div>
@@ -243,33 +266,17 @@
 <section class="discard" id="discard">
   <div class="wrap">
     <div class="eyebrow">Beyond the Loaf</div>
-    <h2>Sweets, treats &amp; starter</h2>
+    <h2>Discard breads &amp; sweet treats</h2>
+    <p class="photo-disclaimer">Made with sourdough discard, so nothing from the starter goes to waste. Discard breads are $14 a loaf or $5 a slice.</p>
+    <div class="subhead">Sweet</div>
     <div class="menu-grid">
       <div class="menu-card">
-        <div class="photo"><img src="https://images.unsplash.com/photo-1657418830273-40c19cfff4d7?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Brown Butter Chocolate Chip Cookies" loading="lazy"></div>
+        <div class="photo">Photo coming soon</div>
         <div class="body">
-          <div class="name">Brown Butter Chocolate Chip Cookies</div>
-          <div class="desc">Chewy sourdough discard cookies made with nutty brown butter and milk chocolate chips.</div>
-          <div class="sizes"><span>$3.50 each</span><span>$10/bag of 3</span><span>$18/box of 6</span><span>$32/box of 12</span></div>
-          <div class="ingredients"><strong>Ingredients:</strong> flour, sugar, salt, baking soda, baking powder, milk chocolate chips, eggs, brown butter, vanilla extract, sourdough discard</div>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="photo"><img src="https://images.unsplash.com/photo-1604761483402-1e07d167c09b?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Brown Butter Sourdough Brownies" loading="lazy"></div>
-        <div class="body">
-          <div class="name">Brown Butter Sourdough Brownies</div>
-          <div class="desc">Rich, fudgy brownies made with nutty brown butter and sourdough discard.</div>
-          <div class="sizes"><span>$4 each</span></div>
-          <div class="ingredients"><strong>Ingredients:</strong> sugar, dark chocolate, brown butter, sourdough discard (flour, water), eggs, chocolate chips, cocoa powder, all-purpose flour, vanilla extract, salt</div>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="photo"><img src="https://images.unsplash.com/photo-1569762404472-026308ba6b64?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Sourdough Discard Banana Bread" loading="lazy"></div>
-        <div class="body">
-          <div class="name">Sourdough Discard Banana Bread</div>
-          <div class="desc">Moist, tender banana bread made with ripe bananas and sourdough discard.</div>
-          <div class="sizes"><span>$14 whole loaf</span><span>$4 slice</span></div>
-          <div class="ingredients"><strong>Ingredients:</strong> ripe bananas, sourdough discard (flour, water), all-purpose flour, brown sugar, butter, sugar, eggs, vanilla extract, baking soda, cinnamon, salt</div>
+          <div class="name">Apple Pie Bread</div>
+          <div class="desc">Everything you love about apple pie, baked into a soft sourdough discard loaf.</div>
+          <div class="sizes"><span>$14 whole loaf</span><span>$5 slice</span></div>
+          <div class="ingredients"><strong>Ingredients:</strong> apples, cinnamon, sourdough discard (flour, water), all-purpose flour, sugar, butter, eggs</div>
         </div>
       </div>
       <div class="menu-card">
@@ -278,19 +285,66 @@
           <div class="name-badge">Fall seasonal</div>
           <div class="name">Sourdough Discard Pumpkin Bread</div>
           <div class="desc">A soft, spiced sweet loaf made with pumpkin and sourdough discard.</div>
-          <div class="sizes"><span>$14 whole loaf</span><span>$4 slice</span></div>
+          <div class="sizes"><span>$14 whole loaf</span><span>$5 slice</span></div>
           <div class="ingredients"><strong>Ingredients:</strong> pumpkin purée, all-purpose flour, brown sugar, sourdough discard (flour, water), eggs, vegetable oil, sugar, pumpkin pie spice, baking soda, baking powder, salt</div>
         </div>
       </div>
       <div class="menu-card">
-        <div class="photo"><img src="https://rootedinrahmah.com/sourdough-starter.jpg" alt="Jar of active sourdough starter" loading="lazy"></div>
+        <div class="photo"><img src="https://images.unsplash.com/photo-1569762404472-026308ba6b64?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Chocolate Chip Banana Bread" loading="lazy"></div>
         <div class="body">
-          <div class="name">Sourdough Starter</div>
-          <div class="desc">An 8 oz mason jar of the same active starter I bake every loaf with, plus a printed feeding guide so you can start baking at home.</div>
-          <div class="sizes"><span>$12 per 8 oz jar</span></div>
-          <div class="ingredients"><strong>Ingredients:</strong> all-purpose flour, water</div>
+          <div class="name">Chocolate Chip Banana Bread</div>
+          <div class="desc">Moist, tender banana bread studded with chocolate chips.</div>
+          <div class="sizes"><span>$14 whole loaf</span><span>$5 slice</span></div>
+          <div class="ingredients"><strong>Ingredients:</strong> ripe bananas, sourdough discard (flour, water), all-purpose flour, brown sugar, butter, sugar, eggs, chocolate chips, vanilla extract, baking soda, cinnamon, salt</div>
         </div>
       </div>
+    </div>
+    <div class="subhead">Savory</div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="photo">Photo coming soon</div>
+        <div class="body">
+          <div class="name">Cheddar &amp; Scallion Bread</div>
+          <div class="desc">A savory discard loaf packed with sharp cheddar and fresh scallions.</div>
+          <div class="sizes"><span>$14 whole loaf</span><span>$5 slice</span></div>
+          <div class="ingredients"><strong>Ingredients:</strong> sourdough discard (flour, water), all-purpose flour, cheddar, scallions, eggs, butter, baking powder, salt</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="photo">Photo coming soon</div>
+        <div class="body">
+          <div class="name">Garlic, Herb &amp; Mozzarella Bread</div>
+          <div class="desc">A savory discard loaf with garlic, herbs, and pockets of melted mozzarella.</div>
+          <div class="sizes"><span>$14 whole loaf</span><span>$5 slice</span></div>
+          <div class="ingredients"><strong>Ingredients:</strong> sourdough discard (flour, water), all-purpose flour, mozzarella, garlic, herbs, eggs, butter, baking powder, salt</div>
+        </div>
+      </div>
+    </div>
+    <div class="subhead">Sweet treats</div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1657418830273-40c19cfff4d7?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Brown Butter Chocolate Chip Cookies" loading="lazy"></div>
+        <div class="body">
+          <div class="name-badge">Signature</div>
+          <div class="name">Brown Butter Chocolate Chip Cookies</div>
+          <div class="desc">Big, chewy sourdough discard cookies made with nutty brown butter and a signature melted chocolate swirl.</div>
+          <div class="sizes"><span>$3 each</span></div>
+          <div class="ingredients"><strong>Ingredients:</strong> flour, sugar, salt, baking soda, baking powder, milk chocolate chips, melted chocolate, eggs, brown butter, vanilla extract, sourdough discard</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1604761483402-1e07d167c09b?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Brown Butter Fudge Brownies" loading="lazy"></div>
+        <div class="body">
+          <div class="name">Brown Butter Fudge Brownies</div>
+          <div class="desc">Rich, fudgy brownies made with nutty brown butter and sourdough discard.</div>
+          <div class="sizes"><span>$3 each</span></div>
+          <div class="ingredients"><strong>Ingredients:</strong> sugar, dark chocolate, brown butter, sourdough discard (flour, water), eggs, chocolate chips, cocoa powder, all-purpose flour, vanilla extract, salt</div>
+        </div>
+      </div>
+    </div>
+    <div class="coming">
+      <strong>More coming soon</strong>
+      I'm working on recipes for sourdough cinnamon rolls, scones, and other sweet treats. Follow <a href="https://instagram.com/sourdough.studio.rr" target="_blank" rel="noopener" style="color:var(--brown);border-bottom:1px solid var(--brown);">@sourdough.studio.rr</a> to see them first.
     </div>
   </div>
 </section>
@@ -298,46 +352,71 @@
 <section class="how" id="pickup">
   <div class="wrap">
     <div class="eyebrow">How It Works</div>
-    <h2>Ordering &amp; pickup</h2>
+    <h2>Ordering, pickup &amp; markets</h2>
     <div class="how-it-works">
       <div class="step">
         <div class="label">Orders close every Friday</div>
-        <p>Submit your order request by end of day Friday for that week's bake.</p>
+        <p>Submit your order request by end of day Friday for that weekend's bake.</p>
       </div>
       <div class="step">
         <div class="label">Confirm &amp; pay to lock it in</div>
         <p>I'll personally confirm your order, then payment is due upfront via Venmo or Zelle to reserve it.</p>
       </div>
       <div class="step">
-        <div class="label">Pick up Sunday</div>
-        <p>Pickup is at the market on market Sundays, and in Ellicott City on other Sundays. No delivery at this time.</p>
+        <div class="label">Pick up at a market</div>
+        <p>Grab your order at whichever market I'm at that weekend. No delivery at this time.</p>
       </div>
     </div>
 
+    <div class="subhead" style="margin-top:40px;">Where I'll be through the end of 2026</div>
     <table class="pickup-table">
       <thead>
-        <tr><th>Location</th><th>Days</th><th>Time</th><th>Address</th></tr>
+        <tr><th>Market</th><th>Date</th><th>Time</th><th>Location</th></tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Ellicott City pickup</strong></td>
-          <td>Sundays without a market</td>
-          <td>12 – 2 PM</td>
-          <td>Public pickup spot in Ellicott City, MD<br><span class="addr">Exact spot sent with your order confirmation</span></td>
+          <td><strong>MCC Saturday Morning Market</strong></td>
+          <td>Sat, Nov 21</td>
+          <td>8:30 AM – 1:30 PM</td>
+          <td>Muslim Community Center (MCC)<br><span class="addr">15200 New Hampshire Ave, Silver Spring, MD 20905<br>Inside the musalla</span></td>
         </tr>
         <tr>
-          <td><strong>ISB Farmers Market</strong></td>
-          <td>Sundays, Oct 11, 18 &amp; 25</td>
-          <td>9 AM – 2:30 PM</td>
-          <td>ISB parking lot<br><span class="addr">6631 Jonnycake Rd, Baltimore, MD 21244<br>On market days, all orders are picked up here</span></td>
+          <td><strong>MCC Saturday Morning Market</strong></td>
+          <td>Sat, Dec 5</td>
+          <td>8:30 AM – 1:30 PM</td>
+          <td>Muslim Community Center (MCC)<br><span class="addr">15200 New Hampshire Ave, Silver Spring, MD 20905<br>Inside the musalla</span></td>
+        </tr>
+        <tr>
+          <td><strong>NoVa Nite Market</strong></td>
+          <td>Sun, Dec 6</td>
+          <td>3 – 8 PM</td>
+          <td>Frederick, MD<br><span class="addr">5400 Holiday Dr, Frederick, MD 21703</span></td>
+        </tr>
+        <tr>
+          <td><strong>The Bunny Hive Holiday Market</strong></td>
+          <td>Sat, Dec 12</td>
+          <td>10 AM – 1 PM</td>
+          <td>The Bunny Hive<br><span class="addr">4925 Auburn Ave, Bethesda, MD 20814<br>Indoor market</span></td>
+        </tr>
+        <tr>
+          <td><strong>Holiday Market at Peabody Heights Brewery</strong></td>
+          <td>Sat, Dec 19</td>
+          <td>1 – 5 PM</td>
+          <td>Peabody Heights Brewery<br><span class="addr">401 E 30th St, Baltimore, MD 21218</span></td>
+        </tr>
+        <tr>
+          <td><strong>Market at the Garage at R. House</strong></td>
+          <td>Sun, Dec 27</td>
+          <td>11 AM – 3 PM</td>
+          <td>The Garage at R. House<br><span class="addr">301 W 29th St, Baltimore, MD 21211</span></td>
         </tr>
       </tbody>
     </table>
 
-    <p class="photo-disclaimer" style="margin-top:14px;">Can't make it during pickup hours? Mention it in your order notes and we'll arrange another time.</p>
+    <p class="photo-disclaimer" style="margin-top:14px;">Preorders can be picked up at any market above. Can't make it? Mention it in your order notes and we'll arrange another time.</p>
 
     <div class="payment-note">
-      <strong>A note on availability:</strong> I bake a few extra loaves each Sunday beyond what's preordered, so walk-ins are welcome to try a new flavor or grab something if you forgot to order ahead, first come, first served while it lasts. But the only way to guarantee your order is to preorder, get it confirmed, and pay upfront.
+      <strong>A note on availability:</strong> I bring extra loaves to every market beyond what's preordered, so walk-ups are welcome to try a new flavor or grab something if you forgot to order ahead, first come, first served while it lasts. But the only way to guarantee your order is to preorder, get it confirmed, and pay upfront.
     </div>
   </div>
 </section>
@@ -357,14 +436,19 @@
         <div class="order-items-label"><span>Item</span><span style="display:flex;gap:26px;"><span>Size</span><span>Qty</span></span></div>
         <div class="order-items">
           <div class="order-item">
-            <div class="item-name">Classic Sourdough</div>
-            <select name="Classic Sourdough - Size"><option value="">Size</option><option>Small</option><option>Medium</option><option>Large</option></select>
-            <input type="number" name="Classic Sourdough - Qty" min="0" value="0">
-          </div>
-          <div class="order-item">
             <div class="item-name">Jalapeño Cheddar Sourdough</div>
             <select name="Jalapeno Cheddar Sourdough - Size"><option value="">Size</option><option>Small</option><option>Medium</option><option>Large</option></select>
             <input type="number" name="Jalapeno Cheddar Sourdough - Qty" min="0" value="0">
+          </div>
+          <div class="order-item">
+            <div class="item-name">Garlic &amp; Herb Sourdough</div>
+            <select name="Garlic and Herb Sourdough - Size"><option value="">Size</option><option>Small</option><option>Medium</option><option>Large</option></select>
+            <input type="number" name="Garlic and Herb Sourdough - Qty" min="0" value="0">
+          </div>
+          <div class="order-item">
+            <div class="item-name">Cheesy Garlic Sourdough</div>
+            <select name="Cheesy Garlic Sourdough - Size"><option value="">Size</option><option>Small</option><option>Medium</option><option>Large</option></select>
+            <input type="number" name="Cheesy Garlic Sourdough - Qty" min="0" value="0">
           </div>
           <div class="order-item">
             <div class="item-name">Buttery Sourdough</div>
@@ -372,9 +456,9 @@
             <input type="number" name="Buttery Sourdough - Qty" min="0" value="0">
           </div>
           <div class="order-item">
-            <div class="item-name">Almost Sourdough Almond Bread</div>
-            <select name="Almond Bread - Size"><option value="">Size</option><option>Small</option><option>Medium</option><option>Large</option><option>Slice</option></select>
-            <input type="number" name="Almond Bread - Qty" min="0" value="0">
+            <div class="item-name">Classic Sourdough</div>
+            <select name="Classic Sourdough - Size"><option value="">Size</option><option>Small</option><option>Medium</option><option>Large</option></select>
+            <input type="number" name="Classic Sourdough - Qty" min="0" value="0">
           </div>
           <div class="order-item">
             <div class="item-name">Custom Sourdough</div>
@@ -382,37 +466,51 @@
             <input type="number" name="Custom Sourdough - Qty" min="0" value="0">
           </div>
           <div class="order-item">
-            <div class="item-name">Brown Butter Chocolate Chip Cookies</div>
-            <select name="Cookies - Size"><option value="">Type</option><option>Single</option><option>Bag of 3</option><option>Box of 6</option><option>Box of 12</option></select>
-            <input type="number" name="Cookies - Qty" min="0" value="0">
+            <div class="item-name">Apple Pie Bread</div>
+            <select name="Apple Pie Bread - Size"><option value="">Type</option><option>Whole loaf</option><option>Slice</option></select>
+            <input type="number" name="Apple Pie Bread - Qty" min="0" value="0">
           </div>
           <div class="order-item">
-            <div class="item-name">Brown Butter Sourdough Brownies</div>
-            <select name="Brownies - Size"><option value="">Type</option><option>Single</option></select>
-            <input type="number" name="Brownies - Qty" min="0" value="0">
-          </div>
-          <div class="order-item">
-            <div class="item-name">Sourdough Discard Banana Bread</div>
-            <select name="Banana Bread - Size"><option value="">Type</option><option>Whole loaf</option><option>Slice</option></select>
-            <input type="number" name="Banana Bread - Qty" min="0" value="0">
-          </div>
-          <div class="order-item">
-            <div class="item-name">Sourdough Discard Pumpkin Bread</div>
+            <div class="item-name">Pumpkin Bread</div>
             <select name="Pumpkin Bread - Size"><option value="">Type</option><option>Whole loaf</option><option>Slice</option></select>
             <input type="number" name="Pumpkin Bread - Qty" min="0" value="0">
           </div>
           <div class="order-item">
-            <div class="item-name">Sourdough Starter</div>
-            <select name="Starter - Size"><option value="">Type</option><option>Jar</option></select>
-            <input type="number" name="Starter - Qty" min="0" value="0">
+            <div class="item-name">Chocolate Chip Banana Bread</div>
+            <select name="Chocolate Chip Banana Bread - Size"><option value="">Type</option><option>Whole loaf</option><option>Slice</option></select>
+            <input type="number" name="Chocolate Chip Banana Bread - Qty" min="0" value="0">
+          </div>
+          <div class="order-item">
+            <div class="item-name">Cheddar &amp; Scallion Bread</div>
+            <select name="Cheddar Scallion Bread - Size"><option value="">Type</option><option>Whole loaf</option><option>Slice</option></select>
+            <input type="number" name="Cheddar Scallion Bread - Qty" min="0" value="0">
+          </div>
+          <div class="order-item">
+            <div class="item-name">Garlic, Herb &amp; Mozzarella Bread</div>
+            <select name="Garlic Herb Mozzarella Bread - Size"><option value="">Type</option><option>Whole loaf</option><option>Slice</option></select>
+            <input type="number" name="Garlic Herb Mozzarella Bread - Qty" min="0" value="0">
+          </div>
+          <div class="order-item">
+            <div class="item-name">Brown Butter Chocolate Chip Cookies</div>
+            <select name="Cookies - Size"><option value="">Type</option><option>Single</option></select>
+            <input type="number" name="Cookies - Qty" min="0" value="0">
+          </div>
+          <div class="order-item">
+            <div class="item-name">Brown Butter Fudge Brownies</div>
+            <select name="Brownies - Size"><option value="">Type</option><option>Single</option></select>
+            <input type="number" name="Brownies - Qty" min="0" value="0">
           </div>
         </div>
 
         <div class="field">
           <label>Pickup location <span class="tag">optional</span></label>
           <select name="pickup_location">
-            <option>ISB Farmers Market, Baltimore (market Sundays, 9 AM – 2:30 PM)</option>
-            <option>Ellicott City pickup (Sundays without a market, 12 – 2 PM)</option>
+            <option>MCC, Silver Spring, Sat Nov 21</option>
+            <option>MCC, Silver Spring, Sat Dec 5</option>
+            <option>NoVa Nite Market, Frederick, Sun Dec 6</option>
+            <option>The Bunny Hive, Bethesda, Sat Dec 12</option>
+            <option>Peabody Heights Brewery, Baltimore, Sat Dec 19</option>
+            <option>Garage at R. House, Baltimore, Sun Dec 27</option>
             <option>I need a different time (add details in notes)</option>
           </select>
         </div>
